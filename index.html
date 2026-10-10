@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vansuok Studio — T-shirts for every trade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F2EC;--surface:#FFFFFF;--text:#111111;--muted:#45453F;--solid:#111111;--on-solid:#F3F2EC;--tee-on-solid:#2A2A2E;--btn:#111111;--on-btn:#FFFFFF;--accent:#FF5B1F;--on-accent:#111111;--second:#2B44FF;--on-second:#FFFFFF;--deep:#16245E;--pop:#C6F432;}
+.vs-tab{min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid var(--text);background:transparent;color:var(--text);font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.vs-tab[aria-pressed="true"]{background:var(--btn);border-color:var(--btn);color:var(--on-btn);font-weight:700}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;overflow-x:clip}
+a{color:inherit}a:hover{opacity:.85}
+@keyframes vs-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes vs-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.vs-track{animation:vs-marquee 28s linear infinite}
+.vs-spin{animation:vs-spin 14s linear infinite}
+.vs-card{transition:transform .25s ease}
+.vs-card:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion: reduce){.vs-track,.vs-spin{animation:none}}
+</style>
+</head>
+<body>
+<div style="font-family: 'Bricolage Grotesque', 'Helvetica Neue', system-ui, sans-serif; color: var(--text); background: var(--bg); min-height: 600px">
+
+<!-- NAV -->
+<header style="max-width: 1360px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+  <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text)">
+    <span style="width: 40px; height: 40px; border-radius: 12px; background: var(--btn); color: var(--on-btn); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px">V</span>
+    <span style="font-weight: 800; font-size: 20px; letter-spacing: -0.02em">VANSUOK<span style="font-weight: 500; color: var(--muted)"> studio</span></span>
+  </a>
+  <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 6px; background: var(--surface); border-radius: 999px; padding: 6px">
+    <a href="#collections" style="padding: 10px 18px; border-radius: 999px; background: var(--btn); color: var(--on-btn); text-decoration: none; font-weight: 500; font-size: 15px">Collections</a>
+    <a href="#shop" style="padding: 10px 18px; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 15px">T-shirts</a>
+    <a href="#merch" style="padding: 10px 18px; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 15px">Merch</a>
+    <a href="#suggest" style="padding: 10px 18px; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 15px">Suggest a trade</a>
+    <a href="#about" style="padding: 10px 18px; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 15px">About</a>
+  </nav>
+  <div style="display: flex; gap: 10px; align-items: center">
+    <button aria-label="Search" style="width: 46px; height: 46px; border-radius: 999px; border: 1.5px solid var(--text); background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="stroke: var(--text)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+    </button>
+    <button style="height: 46px; padding: 0 18px; border-radius: 999px; border: none; background: var(--btn); color: var(--on-btn); display: flex; align-items: center; gap: 10px; font-family: inherit; font-weight: 700; font-size: 15px; cursor: pointer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="stroke: var(--on-btn)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2z"></path><path d="M9 8a3 3 0 0 1 6 0"></path></svg>
+      Cart
+      <span style="min-width: 22px; height: 22px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 12px; display: flex; align-items: center; justify-content: center">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" style="max-width: 1360px; margin: 0 auto; padding: 32px 24px 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr)); gap: 40px; align-items: center">
+  <div style="display: flex; flex-direction: column; gap: 28px">
+    <span style="align-self: flex-start; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 14px; border: 1.5px solid var(--text); border-radius: 999px">Profession tees · Stickers &amp; keychains soon</span>
+    <h1 style="margin: 0; font-size: clamp(56px, 8.4vw, 124px); line-height: 0.92; letter-spacing: -0.045em; font-weight: 800; display: flex; flex-direction: column; gap: 6px">
+      <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px">T-shirts
+        <span aria-hidden="true" style="display: inline-flex; align-items: center; justify-content: center; width: 1.5em; height: 0.82em; border-radius: 999px; background: var(--second)">
+          <svg viewBox="0 0 200 220" style="height: 70%" aria-hidden="true"><path d="M60 12 L82 4 Q100 20 118 4 L140 12 L192 42 L172 82 L150 70 L150 212 L50 212 L50 70 L28 82 L8 42 Z" style="fill: var(--on-second)"></path></svg>
+        </span>
+      </span>
+      <span>for every</span>
+      <span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px">trade<span style="color: var(--accent)">.</span>
+        <span style="font-size: 0.22em; font-weight: 500; letter-spacing: 0; line-height: 1.3; max-width: 280px; color: var(--muted)">Profession-themed tees for traders, sailors, nail artists &amp; more. Stickers and keychains are next.</span>
+      </span>
+    </h1>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+      <a href="#collections" style="display: inline-flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 10px 0 26px; border-radius: 999px; background: var(--btn); color: var(--on-btn); text-decoration: none; font-weight: 700; font-size: 17px">
+        Shop tees by trade
+        <span style="width: 40px; height: 40px; border-radius: 999px; background: var(--accent); display: flex; align-items: center; justify-content: center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="stroke: var(--on-accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M9 7h8v8"></path></svg>
+        </span>
+      </a>
+      <a href="#shop" style="font-weight: 700; font-size: 16px; padding: 14px 6px; text-underline-offset: 6px">See new drops</a>
+    </div>
+  </div>
+
+  <!-- hero bento -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 14px">
+    <div style="grid-row: span 2; border-radius: 32px; background: var(--solid); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center">
+      <span style="position: absolute; top: 20px; left: 20px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; color: #111111; background: var(--pop); padding: 6px 12px; border-radius: 999px">01 / TRADING</span>
+      <svg viewBox="0 0 200 220" style="width: 78%" role="img" aria-label="Dark tee printed with chart candles">
+        <path d="M60 12 L82 4 Q100 20 118 4 L140 12 L192 42 L172 82 L150 70 L150 212 L50 212 L50 70 L28 82 L8 42 Z" style="fill: var(--tee-on-solid)"></path>
+        <line x1="82" y1="88" x2="82" y2="126" stroke="#FF5B5B" stroke-width="2"></line><rect x="77" y="96" width="10" height="22" fill="#FF5B5B"></rect>
+        <line x1="100" y1="78" x2="100" y2="120" style="stroke: var(--pop)" stroke-width="2"></line><rect x="95" y="84" width="10" height="28" style="fill: var(--pop)"></rect>
+        <line x1="118" y1="66" x2="118" y2="106" style="stroke: var(--pop)" stroke-width="2"></line><rect x="113" y="72" width="10" height="26" style="fill: var(--pop)"></rect>
+        <text x="100" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" style="fill: var(--pop)">HODL THE LINE</text>
+      </svg>
+      <span style="position: absolute; bottom: 20px; left: 20px; right: 20px; display: flex; justify-content: space-between; color: var(--on-solid); font-size: 14px"><span>Trading Tee</span><span>[PRICE]</span></span>
+    </div>
+    <div style="border-radius: 32px; background: var(--second); color: var(--on-second); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden">
+      <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em">02 / NAVY</span>
+      <span style="font-size: 30px; line-height: 1; font-weight: 800; letter-spacing: -0.03em">Sailor stripes,<br>zero cringe.</span>
+      <svg viewBox="0 0 120 40" style="position: absolute; right: -10px; top: 18px; width: 120px" aria-hidden="true"><path d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10 M0 24 Q15 14 30 24 T60 24 T90 24 T120 24" style="stroke: var(--on-second)" stroke-width="3" fill="none" opacity="0.5"></path></svg>
+    </div>
+    <div style="border-radius: 32px; background: var(--accent); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center">
+      <div class="vs-spin" style="width: 168px; height: 168px">
+        <svg viewBox="0 0 200 200" style="width: 100%; height: 100%" role="img" aria-label="Badge: tees, stickers, keychains and more merch">
+          <defs><path id="vs-circle" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0"></path></defs>
+          <text font-family="JetBrains Mono, monospace" font-size="15" font-weight="700" letter-spacing="3" style="fill: var(--on-accent)"><textPath href="#vs-circle">TEES ✦ STICKERS ✦ KEYCHAINS ✦ MORE MERCH ✦</textPath></text>
+          <circle cx="100" cy="100" r="34" style="fill: var(--on-accent)"></circle>
+          <path d="M100 82 L104 96 L118 100 L104 104 L100 118 L96 104 L82 100 L96 96 Z" style="fill: var(--accent)"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div style="background: var(--solid); color: var(--on-solid); overflow: hidden; padding: 18px 0; transform: rotate(-1.2deg); margin: 24px -20px 0">
+  <div class="vs-track" style="display: flex; gap: 40px; width: max-content; font-size: 34px; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; align-items: center">
+    <span>TRADING TEES</span><span style="color: var(--accent)">✦</span><span>NAVY TEES</span><span style="color: var(--pop)">✦</span><span>NAILS TEES</span><span style="color: var(--second)">✦</span><span style="font-weight: 400; font-style: italic">stickers &amp; keychains soon</span><span style="color: var(--accent)">✦</span>
+    <span>TRADING TEES</span><span style="color: var(--accent)">✦</span><span>NAVY TEES</span><span style="color: var(--pop)">✦</span><span>NAILS TEES</span><span style="color: var(--second)">✦</span><span style="font-weight: 400; font-style: italic">stickers &amp; keychains soon</span><span style="color: var(--accent)">✦</span>
+  </div>
+</div>
+
+<!-- COLLECTIONS -->
+<section id="collections" style="max-width: 1360px; margin: 0 auto; padding: 120px 24px 40px; display: flex; flex-direction: column; gap: 40px">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+    <h2 style="margin: 0; font-size: clamp(40px, 5.4vw, 76px); line-height: 0.95; letter-spacing: -0.04em; font-weight: 800">One trade,<br><span style="font-weight: 400; font-style: italic">one collection.</span></h2>
+    <p style="margin: 0; max-width: 400px; font-size: 17px; line-height: 1.5; color: var(--muted)">Each collection is built around one profession — its tools, its lingo, its insider jokes. It starts with a T-shirt, then grows into stickers, keychains and more.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px">
+    <a href="#shop" class="vs-card" style="min-height: 440px; border-radius: 32px; background: var(--solid); color: var(--on-solid); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; position: relative; overflow: hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px"><span>01 /</span><span style="padding: 6px 12px; border-radius: 999px; border: 1px solid var(--on-solid)">[#] designs</span></div>
+      <svg viewBox="0 0 240 120" style="width: 100%" aria-hidden="true">
+        <polyline points="0,100 30,86 55,92 85,60 110,70 140,38 170,48 200,18 240,8" fill="none" style="stroke: var(--pop)" stroke-width="4" stroke-linejoin="round"></polyline>
+        <circle cx="240" cy="8" r="6" style="fill: var(--pop)"></circle>
+      </svg>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 52px; font-weight: 800; letter-spacing: -0.04em; line-height: 1">Trading</span>
+        <span style="font-size: 16px; line-height: 1.45; opacity: 0.82">For chart people: green candles, red candles and late nights watching orders.</span>
+        <span style="margin-top: 8px; font-weight: 700; color: var(--pop)">View collection →</span>
+      </div>
+    </a>
+    <a href="#shop" class="vs-card" style="min-height: 440px; border-radius: 32px; background: var(--deep); color: #FFFFFF; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; position: relative; overflow: hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px"><span>02 /</span><span style="padding: 6px 12px; border-radius: 999px; border: 1px solid #FFFFFF">[#] designs</span></div>
+      <div style="display: flex; flex-direction: column; gap: 12px" aria-hidden="true">
+        <div style="height: 14px; border-radius: 999px; background: #FFFFFF"></div>
+        <div style="height: 14px; border-radius: 999px; background: #FFFFFF; width: 82%"></div>
+        <div style="height: 14px; border-radius: 999px; background: #FFFFFF; width: 64%"></div>
+        <div style="height: 14px; border-radius: 999px; background: var(--second); width: 46%"></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 52px; font-weight: 800; letter-spacing: -0.04em; line-height: 1">Navy</span>
+        <span style="font-size: 16px; line-height: 1.45; opacity: 0.85">For those who sail and those who dream of it: stripes, anchors, sea charts.</span>
+        <span style="margin-top: 8px; font-weight: 700">View collection →</span>
+      </div>
+    </a>
+    <a href="#shop" class="vs-card" style="min-height: 440px; border-radius: 32px; background: var(--accent); color: var(--on-accent); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; position: relative; overflow: hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px"><span>03 /</span><span style="padding: 6px 12px; border-radius: 999px; border: 1px solid var(--on-accent)">[#] designs</span></div>
+      <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px" aria-hidden="true">
+        <span style="aspect-ratio: 1; border-radius: 999px; background: var(--on-accent)"></span>
+        <span style="aspect-ratio: 1; border-radius: 999px; background: #F7F6F1"></span>
+        <span style="aspect-ratio: 1; border-radius: 999px; background: var(--second)"></span>
+        <span style="aspect-ratio: 1; border-radius: 999px; background: var(--deep)"></span>
+        <span style="aspect-ratio: 1; border-radius: 999px; border: 2px solid var(--on-accent)"></span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 52px; font-weight: 800; letter-spacing: -0.04em; line-height: 1">Nails</span>
+        <span style="font-size: 16px; line-height: 1.45">For nail artists and salons: color swatches, fine brushes and the steadiest hands in town.</span>
+        <span style="margin-top: 8px; font-weight: 700">View collection →</span>
+      </div>
+    </a>
+    <a href="#suggest" class="vs-card" style="min-height: 440px; border-radius: 32px; border: 2px dashed var(--text); color: var(--text); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none">
+      <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px">04 / coming soon</span>
+      <span style="width: 72px; height: 72px; border-radius: 999px; background: var(--btn); color: var(--on-btn); display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 400">+</span>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 40px; font-weight: 800; letter-spacing: -0.04em; line-height: 1">Next trade?</span>
+        <span style="font-size: 16px; line-height: 1.45; color: var(--muted)">Doctors, baristas, devs… You suggest it, we design it.</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" style="max-width: 1360px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 32px">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px">
+    <h2 style="margin: 0; font-size: clamp(36px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.04em; font-weight: 800">Fresh tees</h2>
+    <div role="group" aria-label="Filter by collection" style="display: flex; flex-wrap: wrap; gap: 8px">
+      <button class="vs-tab" data-filter="All" aria-pressed="true">All</button><button class="vs-tab" data-filter="Trading" aria-pressed="false">Trading</button><button class="vs-tab" data-filter="Navy" aria-pressed="false">Navy</button><button class="vs-tab" data-filter="Nails" aria-pressed="false">Nails</button>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px">
+    
+      <article data-collection="Trading" class="vs-card" style="background: var(--surface); border-radius: 28px; padding: 12px; display: flex; flex-direction: column; gap: 14px">
+        <div style="border-radius: 20px; background: #E9E7DF; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; position: relative">
+          <span style="position: absolute; top: 14px; left: 14px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; background: #FFFFFF; color: #111111; padding: 6px 12px; border-radius: 999px">Trading</span>
+          <svg viewBox="0 0 200 220" style="width: 70%" role="img" aria-label="Trading Tee — No. 01">
+            <path d="M60 12 L82 4 Q100 20 118 4 L140 12 L192 42 L172 82 L150 70 L150 212 L50 212 L50 70 L28 82 L8 42 Z" fill="#111111" stroke="#88888855" stroke-width="1.5"></path>
+            
+              <g>
+                <line x1="82" y1="88" x2="82" y2="126" stroke="#C6F432" stroke-width="2"></line><rect x="77" y="96" width="10" height="22" fill="#C6F432" opacity="0.55"></rect>
+                <line x1="100" y1="78" x2="100" y2="120" stroke="#C6F432" stroke-width="2"></line><rect x="95" y="84" width="10" height="28" fill="#C6F432"></rect>
+                <line x1="118" y1="66" x2="118" y2="106" stroke="#C6F432" stroke-width="2"></line><rect x="113" y="72" width="10" height="26" fill="#C6F432"></rect>
+              </g>
+            </svg>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 4px 8px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Trading Tee — No. 01</span>
+            <span style="font-size: 14px; color: var(--muted)">Sizes S–XXL · Unisex</span>
+          </div>
+          <span style="font-size: 19px; font-weight: 800">[PRICE]</span>
+        </div>
+        <button aria-label="Add Trading Tee — No. 01 to cart" style="min-height: 48px; border-radius: 999px; border: none; background: var(--btn); color: var(--on-btn); font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px">
+          Add to cart
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: var(--on-btn)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        </button>
+      </article>
+    
+      <article data-collection="Navy" class="vs-card" style="background: var(--surface); border-radius: 28px; padding: 12px; display: flex; flex-direction: column; gap: 14px">
+        <div style="border-radius: 20px; background: #D5DBF3; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; position: relative">
+          <span style="position: absolute; top: 14px; left: 14px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; background: #FFFFFF; color: #111111; padding: 6px 12px; border-radius: 999px">Navy</span>
+          <svg viewBox="0 0 200 220" style="width: 70%" role="img" aria-label="Navy Tee — No. 01">
+            <path d="M60 12 L82 4 Q100 20 118 4 L140 12 L192 42 L172 82 L150 70 L150 212 L50 212 L50 70 L28 82 L8 42 Z" fill="#16245E" stroke="#88888855" stroke-width="1.5"></path>
+            
+              <g fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round">
+                <circle cx="100" cy="74" r="7"></circle>
+                <path d="M100 81 L100 130 M86 94 L114 94 M78 112 Q100 146 122 112"></path>
+              </g>
+            </svg>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 4px 8px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Navy Tee — No. 01</span>
+            <span style="font-size: 14px; color: var(--muted)">Sizes S–XXL · Unisex</span>
+          </div>
+          <span style="font-size: 19px; font-weight: 800">[PRICE]</span>
+        </div>
+        <button aria-label="Add Navy Tee — No. 01 to cart" style="min-height: 48px; border-radius: 999px; border: none; background: var(--btn); color: var(--on-btn); font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px">
+          Add to cart
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: var(--on-btn)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        </button>
+      </article>
+    
+      <article data-collection="Nails" class="vs-card" style="background: var(--surface); border-radius: 28px; padding: 12px; display: flex; flex-direction: column; gap: 14px">
+        <div style="border-radius: 20px; background: #FFD9C7; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; position: relative">
+          <span style="position: absolute; top: 14px; left: 14px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; background: #FFFFFF; color: #111111; padding: 6px 12px; border-radius: 999px">Nails</span>
+          <svg viewBox="0 0 200 220" style="width: 70%" role="img" aria-label="Nails Tee — No. 01">
+            <path d="M60 12 L82 4 Q100 20 118 4 L140 12 L192 42 L172 82 L150 70 L150 212 L50 212 L50 70 L28 82 L8 42 Z" fill="#F7F6F1" stroke="#88888855" stroke-width="1.5"></path>
+            
+              <g fill="#2B44FF">
+                <circle cx="76" cy="104" r="8"></circle><circle cx="88" cy="84" r="8"></circle><circle cx="108" cy="78" r="8"></circle><circle cx="124" cy="94" r="8"></circle>
+                <rect x="94" y="100" width="12" height="34" rx="6"></rect>
+              </g>
+            </svg>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 4px 8px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Nails Tee — No. 01</span>
+            <span style="font-size: 14px; color: var(--muted)">Sizes S–XXL · Unisex</span>
+          </div>
+          <span style="font-size: 19px; font-weight: 800">[PRICE]</span>
+        </div>
+        <button aria-label="Add Nails Tee — No. 01 to cart" style="min-height: 48px; border-radius: 999px; border: none; background: var(--btn); color: var(--on-btn); font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px">
+          Add to cart
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: var(--on-btn)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        </button>
+      </article>
+    
+      <article data-collection="Trading" class="vs-card" style="background: var(--surface); border-radius: 28px; padding: 12px; display: flex; flex-direction: column; gap: 14px">
+        <div style="border-radius: 20px; background: #DCE9B0; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; position: relative">
+          <span style="position: absolute; top: 14px; left: 14px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; background: #FFFFFF; color: #111111; padding: 6px 12px; border-radius: 999px">Trading</span>
+          <svg viewBox="0 0 200 220" style="width: 70%" role="img" aria-label="Trading Tee — No. 02">
+            <path d="M60 12 L82 4 Q100 20 118 4 L140 12 L192 42 L172 82 L150 70 L150 212 L50 212 L50 70 L28 82 L8 42 Z" fill="#F7F6F1" stroke="#88888855" stroke-width="1.5"></path>
+            
+              <g>
+                <line x1="82" y1="88" x2="82" y2="126" stroke="#111111" stroke-width="2"></line><rect x="77" y="96" width="10" height="22" fill="#111111" opacity="0.55"></rect>
+                <line x1="100" y1="78" x2="100" y2="120" stroke="#111111" stroke-width="2"></line><rect x="95" y="84" width="10" height="28" fill="#111111"></rect>
+                <line x1="118" y1="66" x2="118" y2="106" stroke="#111111" stroke-width="2"></line><rect x="113" y="72" width="10" height="26" fill="#111111"></rect>
+              </g>
+            </svg>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 4px 8px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Trading Tee — No. 02</span>
+            <span style="font-size: 14px; color: var(--muted)">Sizes S–XXL · Unisex</span>
+          </div>
+          <span style="font-size: 19px; font-weight: 800">[PRICE]</span>
+        </div>
+        <button aria-label="Add Trading Tee — No. 02 to cart" style="min-height: 48px; border-radius: 999px; border: none; background: var(--btn); color: var(--on-btn); font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px">
+          Add to cart
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: var(--on-btn)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        </button>
+      </article>
+    
+      <article data-collection="Navy" class="vs-card" style="background: var(--surface); border-radius: 28px; padding: 12px; display: flex; flex-direction: column; gap: 14px">
+        <div style="border-radius: 20px; background: #E9E7DF; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; position: relative">
+          <span style="position: absolute; top: 14px; left: 14px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; background: #FFFFFF; color: #111111; padding: 6px 12px; border-radius: 999px">Navy</span>
+          <svg viewBox="0 0 200 220" style="width: 70%" role="img" aria-label="Navy Tee — No. 02">
+            <path d="M60 12 L82 4 Q100 20 118 4 L140 12 L192 42 L172 82 L150 70 L150 212 L50 212 L50 70 L28 82 L8 42 Z" fill="#F7F6F1" stroke="#88888855" stroke-width="1.5"></path>
+            
+              <g fill="none" stroke="#16245E" stroke-width="5" stroke-linecap="round">
+                <circle cx="100" cy="74" r="7"></circle>
+                <path d="M100 81 L100 130 M86 94 L114 94 M78 112 Q100 146 122 112"></path>
+              </g>
+            </svg>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 4px 8px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Navy Tee — No. 02</span>
+            <span style="font-size: 14px; color: var(--muted)">Sizes S–XXL · Unisex</span>
+          </div>
+          <span style="font-size: 19px; font-weight: 800">[PRICE]</span>
+        </div>
+        <button aria-label="Add Navy Tee — No. 02 to cart" style="min-height: 48px; border-radius: 999px; border: none; background: var(--btn); color: var(--on-btn); font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px">
+          Add to cart
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: var(--on-btn)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        </button>
+      </article>
+    
+      <article data-collection="Nails" class="vs-card" style="background: var(--surface); border-radius: 28px; padding: 12px; display: flex; flex-direction: column; gap: 14px">
+        <div style="border-radius: 20px; background: #FFD9C7; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; position: relative">
+          <span style="position: absolute; top: 14px; left: 14px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; background: #FFFFFF; color: #111111; padding: 6px 12px; border-radius: 999px">Nails</span>
+          <svg viewBox="0 0 200 220" style="width: 70%" role="img" aria-label="Nails Tee — No. 02">
+            <path d="M60 12 L82 4 Q100 20 118 4 L140 12 L192 42 L172 82 L150 70 L150 212 L50 212 L50 70 L28 82 L8 42 Z" fill="#111111" stroke="#88888855" stroke-width="1.5"></path>
+            
+              <g fill="#FF5B1F">
+                <circle cx="76" cy="104" r="8"></circle><circle cx="88" cy="84" r="8"></circle><circle cx="108" cy="78" r="8"></circle><circle cx="124" cy="94" r="8"></circle>
+                <rect x="94" y="100" width="12" height="34" rx="6"></rect>
+              </g>
+            </svg>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 4px 8px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">Nails Tee — No. 02</span>
+            <span style="font-size: 14px; color: var(--muted)">Sizes S–XXL · Unisex</span>
+          </div>
+          <span style="font-size: 19px; font-weight: 800">[PRICE]</span>
+        </div>
+        <button aria-label="Add Nails Tee — No. 02 to cart" style="min-height: 48px; border-radius: 999px; border: none; background: var(--btn); color: var(--on-btn); font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px">
+          Add to cart
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: var(--on-btn)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        </button>
+      </article>
+    
+  </div>
+  <a href="#shop" style="align-self: center; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1.5px solid var(--text); text-decoration: none; font-weight: 700">View all tees</a>
+</section>
+
+<!-- MERCH RANGE -->
+<section id="merch" style="max-width: 1360px; margin: 0 auto; padding: 0 24px 80px; display: flex; flex-direction: column; gap: 32px">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+    <h2 style="margin: 0; font-size: clamp(36px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.04em; font-weight: 800">More than a tee<span style="color: var(--accent)">.</span></h2>
+    <p style="margin: 0; max-width: 380px; font-size: 17px; line-height: 1.5; color: var(--muted)">The same trade designs, on the things you carry every day.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px">
+    <a href="#shop" class="vs-card" style="min-height: 260px; border-radius: 28px; background: var(--solid); color: var(--on-solid); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none">
+      <span style="align-self: flex-start; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; padding: 5px 10px; border-radius: 999px; background: var(--pop); color: #111111">AVAILABLE NOW</span>
+      <svg viewBox="0 0 200 220" style="width: 84px" aria-hidden="true"><path d="M60 12 L82 4 Q100 20 118 4 L140 12 L192 42 L172 82 L150 70 L150 212 L50 212 L50 70 L28 82 L8 42 Z" fill="none" style="stroke: var(--on-solid)" stroke-width="10" stroke-linejoin="round"></path></svg>
+      <span style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em">T-shirts</span>
+    </a>
+    <div style="min-height: 260px; border-radius: 28px; background: var(--surface); padding: 24px; display: flex; flex-direction: column; justify-content: space-between">
+      <span style="align-self: flex-start; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--text)">COMING SOON</span>
+      <svg viewBox="0 0 100 100" style="width: 84px" aria-hidden="true"><path d="M14 14 H86 V62 L62 86 H14 Z" fill="none" style="stroke: var(--text)" stroke-width="6" stroke-linejoin="round"></path><path d="M86 62 H62 V86" fill="none" style="stroke: var(--text)" stroke-width="6" stroke-linejoin="round"></path></svg>
+      <span style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em">Stickers</span>
+    </div>
+    <div style="min-height: 260px; border-radius: 28px; background: var(--surface); padding: 24px; display: flex; flex-direction: column; justify-content: space-between">
+      <span style="align-self: flex-start; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--text)">COMING SOON</span>
+      <svg viewBox="0 0 100 100" style="width: 84px" aria-hidden="true"><circle cx="30" cy="30" r="16" fill="none" style="stroke: var(--text)" stroke-width="6"></circle><rect x="40" y="40" width="44" height="44" rx="12" fill="none" style="stroke: var(--text)" stroke-width="6"></rect></svg>
+      <span style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em">Keychains</span>
+    </div>
+    <div style="min-height: 260px; border-radius: 28px; border: 2px dashed var(--text); padding: 24px; display: flex; flex-direction: column; justify-content: space-between">
+      <span style="align-self: flex-start; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px">LATER</span>
+      <span style="width: 64px; height: 64px; border-radius: 999px; background: var(--accent); color: var(--on-accent); display: flex; align-items: center; justify-content: center; font-size: 36px">+</span>
+      <span style="font-size: 32px; font-weight: 800; letter-spacing: -0.03em">&amp; more merch</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE STRIP -->
+<section id="about" style="max-width: 1360px; margin: 0 auto; padding: 0 24px 80px">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px">
+    <div style="background: var(--surface); border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: var(--muted)">FABRIC</span>
+      <span style="font-size: 24px; font-weight: 700; letter-spacing: -0.02em">[Fabric · weight]</span>
+      <span style="font-size: 15px; line-height: 1.5; color: var(--muted)">[Short note on thickness, fit and feel]</span>
+    </div>
+    <div style="background: var(--surface); border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: var(--muted)">PRINT</span>
+      <span style="font-size: 24px; font-weight: 700; letter-spacing: -0.02em">[Print method]</span>
+      <span style="font-size: 15px; line-height: 1.5; color: var(--muted)">[Color fastness, care instructions]</span>
+    </div>
+    <div style="background: var(--surface); border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: var(--muted)">EXCHANGES</span>
+      <span style="font-size: 24px; font-weight: 700; letter-spacing: -0.02em">[Return policy]</span>
+      <span style="font-size: 15px; line-height: 1.5; color: var(--muted)">[Time window, conditions, shipping fees]</span>
+    </div>
+  </div>
+</section>
+
+<!-- SUGGEST A TRADE -->
+<section id="suggest" style="max-width: 1360px; margin: 0 auto; padding: 0 24px 80px">
+  <div style="background: var(--second); color: var(--on-second); border-radius: 40px; padding: clamp(32px, 5vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 40px; align-items: end; position: relative; overflow: hidden">
+    <div style="display: flex; flex-direction: column; gap: 18px">
+      <span style="align-self: flex-start; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; padding: 6px 12px; border-radius: 999px; background: var(--on-second); color: var(--second)">NEXT COLLECTION</span>
+      <h2 style="margin: 0; font-size: clamp(40px, 5vw, 72px); line-height: 0.95; letter-spacing: -0.04em; font-weight: 800">Your trade<br>doesn’t have a tee yet?</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.5; max-width: 440px; opacity: 0.9">Tell us what you do and your favorite insider joke. The next collection could be yours.</p>
+    </div>
+    <form style="display: flex; flex-direction: column; gap: 12px">
+      <label for="vs-trade" style="font-size: 15px; font-weight: 700">Your profession</label>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 6px">
+        <input id="vs-trade" type="text" placeholder="e.g. Barista, Architect, Developer…" style="flex: 1 1 200px; min-width: 0; min-height: 48px; border: none; outline: none; background: transparent; padding: 0 18px; font-family: inherit; font-size: 16px; color: #111111">
+        <button type="submit" style="min-height: 52px; padding: 0 26px; border-radius: 999px; border: none; background: #111111; color: #FFFFFF; font-family: inherit; font-weight: 700; font-size: 16px; cursor: pointer">Send it</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: var(--solid); color: var(--on-solid); border-radius: 40px 40px 0 0; padding: 64px 24px 32px">
+  <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 32px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; opacity: 0.65">COLLECTIONS</span>
+        <a href="#collections" style="text-decoration: none">Trading</a>
+        <a href="#collections" style="text-decoration: none">Navy</a>
+        <a href="#collections" style="text-decoration: none">Nails</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; opacity: 0.65">HELP</span>
+        <a href="#about" style="text-decoration: none">Size guide</a>
+        <a href="#about" style="text-decoration: none">Shipping &amp; returns</a>
+        <a href="#about" style="text-decoration: none">Contact</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; opacity: 0.65">FOLLOW</span>
+        <a href="#top" style="text-decoration: none">Instagram [@handle]</a>
+        <a href="#top" style="text-decoration: none">TikTok [@handle]</a>
+        <a href="#top" style="text-decoration: none">Facebook [link]</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; opacity: 0.65">STUDIO</span>
+        <span>[Studio address]</span>
+        <span>[Email · Phone]</span>
+      </div>
+    </div>
+    <div style="font-size: clamp(64px, 17vw, 260px); font-weight: 800; letter-spacing: -0.06em; line-height: 0.8; display: flex; align-items: baseline; gap: 0.04em">VANSUOK<span style="color: var(--accent)">.</span></div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; opacity: 0.65"><span>© Vansuok Studio</span><span>T-shirts &amp; merch for every trade.</span></div>
+  </div>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('.vs-tab').forEach(function(b){b.addEventListener('click',function(){
+  var f=b.dataset.filter;
+  document.querySelectorAll('.vs-tab').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+  document.querySelectorAll('article[data-collection]').forEach(function(a){a.hidden=!(f==='All'||a.dataset.collection===f);});
+});});
+</script>
+</body>
+</html>
