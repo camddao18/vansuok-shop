@@ -14,7 +14,7 @@ const small = { minHeight: 36, padding: "0 14px", fontSize: 13 } as const;
 export default async function AdminProducts() {
   const products = await listAllProducts();
   return (
-    <section style={{ maxWidth: 1360, margin: "0 auto", padding: "40px 24px 80px", display: "flex", flexDirection: "column", gap: 24 }}>
+    <section style={{ display: "flex", flexDirection: "column", gap: 24 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
         <h1 style={{ margin: 0, fontSize: "clamp(36px, 4.4vw, 60px)", letterSpacing: "-0.04em", fontWeight: 800 }}>Products ({products.length})</h1>
         <Link href="/admin/products/new" className="vs-btn">New product</Link>

@@ -20,7 +20,7 @@ export default async function AdminOrder({ params }: { params: Promise<{ code: s
   const address = [c.address, c.ward, c.district, c.province].filter(Boolean).join(", ");
 
   return (
-    <section style={{ maxWidth: 1360, margin: "0 auto", padding: "40px 24px 80px", display: "flex", flexDirection: "column", gap: 24 }}>
+    <section style={{ display: "flex", flexDirection: "column", gap: 24 }}>
       <Link href="/admin/orders" style={{ fontSize: 14 }}>← All orders</Link>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
         <h1 style={{ margin: 0, fontSize: "clamp(36px, 4.4vw, 60px)", letterSpacing: "-0.04em", fontWeight: 800 }}>

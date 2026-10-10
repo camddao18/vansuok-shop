@@ -20,3 +20,27 @@ textarea.vs-input{padding:14px 16px;min-height:96px;resize:vertical}
 .vs-btn{box-sizing:border-box;min-height:56px;padding:0 28px;border-radius:999px;border:none;background:var(--btn);color:var(--on-btn);font-family:inherit;font-size:17px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none}
 .vs-btn:disabled{opacity:.5;cursor:not-allowed}
 .vs-btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--text)}
+/* Admin portal shell */
+.ad-shell{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:100vh}
+.ad-side{background:var(--solid);color:var(--on-solid);padding:16px 12px;display:flex;flex-direction:column;gap:20px;position:sticky;top:0;height:100vh;box-sizing:border-box;overflow-y:auto}
+.ad-brand{display:flex;align-items:center;gap:12px;padding:4px 8px;text-decoration:none}
+.ad-logo{width:36px;height:36px;border-radius:10px;background:var(--second);color:var(--on-second);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.ad-nav{display:flex;flex-direction:column;gap:18px;flex:1}
+.ad-group{display:flex;flex-direction:column;gap:4px}
+.ad-group-title{font-size:11px;letter-spacing:.08em;opacity:.55;padding:0 10px 4px}
+.ad-link{box-sizing:border-box;display:flex;align-items:center;min-height:40px;padding:0 12px;border-radius:10px;color:inherit;text-decoration:none;font:inherit;font-size:15px;background:transparent;border:0;cursor:pointer;text-align:left}
+.ad-link:hover{background:rgba(255,255,255,.08);opacity:1}
+.ad-link[aria-current="page"]{background:var(--second);color:var(--on-second);font-weight:700}
+.ad-foot{display:flex;flex-direction:column;gap:4px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px}
+.ad-main{padding:32px 32px 80px;min-width:0}
+.ad-main>section{max-width:1360px}
+.ad-title{margin:0;font-size:clamp(36px,4.4vw,60px);letter-spacing:-.04em;font-weight:800}
+@media (max-width:820px){
+  .ad-shell{grid-template-columns:1fr}
+  .ad-side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 16px}
+  .ad-nav{flex-direction:row;flex-wrap:wrap;gap:8px;flex:1 1 100%;order:3}
+  .ad-group{flex-direction:row;flex-wrap:wrap}
+  .ad-group-title{display:none}
+  .ad-foot{flex-direction:row;border:0;padding:0;margin-left:auto}
+  .ad-main{padding:20px 16px 64px}
+}

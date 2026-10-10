@@ -1,19 +1,18 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { SESSION_COOKIE, verifySessionToken } from "@/lib/admin-session";
 
-/** HTTP Basic auth for /admin. Username `admin`, password from ADMIN_PASSWORD. */
-export function middleware(req: NextRequest) {
-  const password = process.env.ADMIN_PASSWORD;
-  const deny = (status: number, body: string) =>
-    new NextResponse(body, { status, headers: { "WWW-Authenticate": 'Basic realm="Vansuok admin"' } });
+/** Gate for /admin/*: a valid session cookie (set by the login page) or a redirect to /admin/login. */
+export async function middleware(req: NextRequest) {
+  if (!process.env.ADMIN_PASSWORD) return new NextResponse("ADMIN_PASSWORD is not set.", { status: 503 });
 
-  if (!password) return deny(503, "ADMIN_PASSWORD is not set.");
+  const { pathname } = req.nextUrl;
+  const signedIn = await verifySessionToken(req.cookies.get(SESSION_COOKIE)?.value);
 
-  const header = req.headers.get("authorization") ?? "";
-  if (header.startsWith("Basic ")) {
-    const [user, ...rest] = atob(header.slice(6)).split(":");
-    if (user === "admin" && rest.join(":") === password) return NextResponse.next();
+  if (pathname === "/admin/login") {
+    return signedIn ? NextResponse.redirect(new URL("/admin", req.url)) : NextResponse.next();
   }
-  return deny(401, "Authentication required.");
+  if (signedIn) return NextResponse.next();
+  return NextResponse.redirect(new URL("/admin/login", req.url));
 }
 
 export const config = { matcher: ["/admin/:path*"] };

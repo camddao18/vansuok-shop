@@ -14,7 +14,7 @@ const td = { padding: "12px 14px", verticalAlign: "top", borderTop: "1px solid #
 export default async function AdminOrders() {
   const orders = await listOrders();
   return (
-    <section style={{ maxWidth: 1360, margin: "0 auto", padding: "40px 24px 80px", display: "flex", flexDirection: "column", gap: 24 }}>
+    <section style={{ display: "flex", flexDirection: "column", gap: 24 }}>
       <h1 style={{ margin: 0, fontSize: "clamp(36px, 4.4vw, 60px)", letterSpacing: "-0.04em", fontWeight: 800 }}>Orders ({orders.length})</h1>
       <div style={{ overflowX: "auto", background: "var(--surface)", borderRadius: 28 }}>
         <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 1000 }}>
