@@ -5,7 +5,7 @@ create table if not exists orders (
   code            bigint primary key,            -- also the payOS orderCode
   access_token    text not null,                 -- secret in the confirmation URL
   status          text not null default 'pending'
-                  check (status in ('pending','paid','cancelled')),
+                  check (status in ('pending','paid','shipped','completed','cancelled')),
   payment_method  text not null check (payment_method in ('payos')),
   items           jsonb not null,
   subtotal        integer not null,

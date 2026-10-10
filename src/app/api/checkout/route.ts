@@ -30,7 +30,7 @@ export async function POST(req: Request) {
   if (!customer.name) return fail("Please enter your name.");
   if (!/^(0|\+84)\d{9,10}$/.test(customer.phone)) return fail("Please enter a valid Vietnamese phone number.");
   if (customer.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customer.email)) return fail("Email looks invalid.");
-  if (!customer.province || !customer.district || !customer.ward || !customer.address)
+  if (!customer.province || !customer.ward || !customer.address)
     return fail("Please complete the shipping address.");
 
   // --- cart: re-priced from the server catalog, client prices are ignored ----

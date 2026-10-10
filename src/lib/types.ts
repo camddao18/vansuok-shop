@@ -55,7 +55,7 @@ export interface CartLine {
 
 /** Add providers here (e.g. "stripe") when international payments are wanted. */
 export type PaymentMethod = "payos";
-export type OrderStatus = "pending" | "paid" | "cancelled";
+export type OrderStatus = "pending" | "paid" | "shipped" | "completed" | "cancelled";
 
 export interface OrderItem {
   productId: string;

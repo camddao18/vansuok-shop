@@ -32,10 +32,14 @@ export default async function OrderPage({
   const headline =
     order.status === "paid" ? "Payment received." :
     order.status === "cancelled" ? "Order cancelled." :
+    order.status === "shipped" ? "On its way." :
+    order.status === "completed" ? "Delivered." :
     cancelled ? "Payment not completed." : "Waiting for your transfer…";
   const detail =
     order.status === "paid" ? "Thank you! We're getting your order ready." :
     order.status === "cancelled" ? "This order was cancelled. You can place a new one anytime." :
+    order.status === "shipped" ? "Your order has been handed to the courier." :
+    order.status === "completed" ? "Thanks for shopping with us!" :
     "This page updates by itself as soon as your bank transfer is confirmed. You don't need to refresh.";
 
   const c = order.customer;
@@ -45,7 +49,7 @@ export default async function OrderPage({
       <OrderWatcher waiting={unpaidTransfer && !cancelled} />
 
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-        <span className="mono" style={{ alignSelf: "flex-start", fontSize: 13, padding: "6px 12px", borderRadius: 999, background: order.status === "paid" ? "var(--pop)" : "var(--surface)", border: "1.5px solid var(--text)" }}>
+        <span className="mono" style={{ alignSelf: "flex-start", fontSize: 13, padding: "6px 12px", borderRadius: 999, background: order.status === "paid" || order.status === "shipped" || order.status === "completed" ? "var(--pop)" : "var(--surface)", border: "1.5px solid var(--text)" }}>
           ORDER #{String(order.code).slice(-8)} · {order.status.toUpperCase()}
         </span>
         <h1 style={{ margin: 0, fontSize: "clamp(44px, 6vw, 88px)", lineHeight: 0.95, letterSpacing: "-0.04em", fontWeight: 800 }}>{headline}</h1>
@@ -63,7 +67,7 @@ export default async function OrderPage({
           <div style={{ lineHeight: 1.5 }}>
             <strong>{c.name}</strong><br />
             {c.phone}{c.email && <> · {c.email}</>}<br />
-            {c.address}, {c.ward}, {c.district}, {c.province}
+            {[c.address, c.ward, c.district, c.province].filter(Boolean).join(", ")}
             {c.note && <><br /><span style={{ color: "var(--muted)" }}>Note: {c.note}</span></>}
           </div>
           <span className="mono" style={{ fontSize: 13, letterSpacing: "0.08em" }}>PAYMENT</span>

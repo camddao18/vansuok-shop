@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { formatVND } from "@/lib/money";
+import { AddressFields } from "@/components/AddressFields";
 import { OrderSummary } from "@/components/OrderSummary";
 import { useCartDetail } from "@/components/useCartDetail";
 
@@ -10,10 +11,6 @@ const FIELDS = [
   { name: "name", label: "Full name", autoComplete: "name", span: 2 },
   { name: "phone", label: "Phone", autoComplete: "tel", type: "tel", span: 1 },
   { name: "email", label: "Email (optional, for order updates)", autoComplete: "email", type: "email", span: 1, optional: true },
-  { name: "province", label: "Province / City", autoComplete: "address-level1", span: 1 },
-  { name: "district", label: "District", autoComplete: "address-level2", span: 1 },
-  { name: "ward", label: "Ward / Commune", autoComplete: "address-level3", span: 1 },
-  { name: "address", label: "Street address", autoComplete: "street-address", span: 2 },
 ] as const;
 
 export default function CheckoutPage() {
@@ -69,6 +66,11 @@ export default function CheckoutPage() {
                 />
               </label>
             ))}
+            <AddressFields />
+            <label className="vs-label" style={{ gridColumn: "span 2" }}>
+              Street address (house number, street)
+              <input className="vs-input" name="address" autoComplete="street-address" required maxLength={200} />
+            </label>
             <label className="vs-label" style={{ gridColumn: "span 2" }}>
               Note for the courier (optional)
               <textarea className="vs-input" name="note" maxLength={300} />

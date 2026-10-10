@@ -19,9 +19,8 @@ export function Footer() {
           </div>
           <div style={col}>
             <span className="mono" style={head}>HELP</span>
-            {/* TODO(owner): dedicated pages for size guide / shipping & returns */}
-            <Link href="/#about" style={link}>Size guide</Link>
-            <Link href="/#about" style={link}>Shipping &amp; returns</Link>
+            <Link href="/size-guide" style={link}>Size guide</Link>
+            <Link href="/shipping-returns" style={link}>Shipping &amp; returns</Link>
             <Link href="/#about" style={link}>Contact</Link>
           </div>
           <div style={col}>
