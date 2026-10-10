@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import { getProduct } from "@/lib/catalog";
 import { shippingFor } from "@/lib/money";
 import type { CartLine, Product } from "@/lib/types";
 import { useCart } from "./CartProvider";
@@ -12,13 +11,13 @@ export interface DetailedLine {
   colorName?: string;
 }
 
-/** Cart lines joined with catalog data. Display only: the server re-prices at checkout. */
+/** Cart lines joined with product data. Display only: the server re-prices at checkout. */
 export function useCartDetail() {
   const cart = useCart();
   return useMemo(() => {
     const lines: DetailedLine[] = [];
     for (const line of cart.lines) {
-      const product = getProduct(line.productId);
+      const product = cart.getProduct(line.productId);
       if (!product) continue;
       lines.push({ line, product, colorName: product.colors?.find((c) => c.id === line.color)?.name });
     }

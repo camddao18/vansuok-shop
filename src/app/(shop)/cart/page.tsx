@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { formatVND } from "@/lib/money";
-import { OrderSummary } from "@/components/OrderSummary";
-import { TeeArt } from "@/components/TeeArt";
-import { useCartDetail } from "@/components/useCartDetail";
+import { OrderSummary } from "@/components/shop/OrderSummary";
+import { TeeArt } from "@/components/shop/TeeArt";
+import { useCartDetail } from "@/components/shop/useCartDetail";
 
 const qtyBtn = { width: 40, height: 44, background: "none", border: "none", fontSize: 20, cursor: "pointer", fontFamily: "inherit" } as const;
 

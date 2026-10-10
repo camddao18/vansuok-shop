@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { randomBytes } from "node:crypto";
-import { getProduct, getCategory } from "@/lib/catalog";
+import { getCategory } from "@/lib/catalog";
+import { getProduct } from "@/lib/products";
 import { shippingFor } from "@/lib/money";
 import { createOrder, updateOrder } from "@/lib/orders";
 import { createPaymentLink } from "@/lib/payos";
@@ -39,9 +40,9 @@ export async function POST(req: Request) {
 
   const items: OrderItem[] = [];
   for (const line of body.items) {
-    const product = getProduct(String(line?.productId));
+    const product = await getProduct(String(line?.productId));
     const qty = Number(line?.qty);
-    if (!product || !Number.isInteger(qty) || qty < 1 || qty > 20) return fail("Cart contains an invalid item.");
+    if (!product?.active || !Number.isInteger(qty) || qty < 1 || qty > 20) return fail("Cart contains an invalid item.");
     if (!getCategory(product.category)?.available) return fail(`${product.name} is not available yet.`);
 
     let size: Size | undefined;

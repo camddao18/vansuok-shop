@@ -1,13 +1,15 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import type { CartLine } from "@/lib/types";
+import type { CartLine, Product } from "@/lib/types";
 
 const KEY = "vs-cart";
 const same = (a: CartLine, b: CartLine) => a.productId === b.productId && a.size === b.size && a.color === b.color;
 
 interface CartCtx {
   lines: CartLine[];
+  /** Look up a purchasable product (the shop layout passes the active ones in). */
+  getProduct: (id: string) => Product | undefined;
   ready: boolean;
   count: number;
   add: (line: CartLine) => void;
@@ -17,7 +19,7 @@ interface CartCtx {
 }
 const Ctx = createContext<CartCtx | null>(null);
 
-export function CartProvider({ children }: { children: ReactNode }) {
+export function CartProvider({ products, children }: { products: Product[]; children: ReactNode }) {
   const [lines, setLines] = useState<CartLine[]>([]);
   const [ready, setReady] = useState(false);
 
@@ -54,8 +56,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const clear = useCallback(() => setLines([]), []);
 
   const value = useMemo(
-    () => ({ lines, ready, count: lines.reduce((s, l) => s + l.qty, 0), add, setQty, remove, clear }),
-    [lines, ready, add, setQty, remove, clear],
+    () => ({
+      lines, ready, count: lines.reduce((s, l) => s + l.qty, 0), add, setQty, remove, clear,
+      getProduct: (id: string) => products.find((p) => p.id === id),
+    }),
+    [lines, ready, products, add, setQty, remove, clear],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

@@ -44,6 +44,8 @@ export interface Product {
   description: string;
   /** If set, replaces the drawn stand-in. Square 1:1 photo. */
   image?: string;
+  /** Inactive products are hidden from the shop and cannot be ordered. */
+  active: boolean;
 }
 
 export interface CartLine {

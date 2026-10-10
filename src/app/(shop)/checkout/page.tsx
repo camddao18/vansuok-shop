@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { formatVND } from "@/lib/money";
-import { AddressFields } from "@/components/AddressFields";
-import { OrderSummary } from "@/components/OrderSummary";
-import { useCartDetail } from "@/components/useCartDetail";
+import { AddressFields } from "@/components/shop/AddressFields";
+import { OrderSummary } from "@/components/shop/OrderSummary";
+import { useCartDetail } from "@/components/shop/useCartDetail";
 
 const FIELDS = [
   { name: "name", label: "Full name", autoComplete: "name", span: 2 },

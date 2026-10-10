@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageTitle } from "@/components/Listing";
+import { PageTitle } from "@/components/shop/Listing";
 import { SIZES } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Size guide — Vansuok Studio" };

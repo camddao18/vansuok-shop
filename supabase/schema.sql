@@ -26,10 +26,4 @@ create table if not exists trade_suggestions (
 );
 alter table trade_suggestions enable row level security;
 
--- Products currently live in src/data/catalog.ts (with `category` and `collection`).
--- When you want to manage them from the DB, mirror them here:
--- create table products (
---   id text primary key, slug text unique not null, name text not null,
---   category text not null, collection text not null, price integer not null,
---   data jsonb not null default '{}'
--- );
+-- Products: run migrations/003_products.sql after this file (table + seed).

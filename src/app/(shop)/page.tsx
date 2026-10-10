@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { CATEGORIES, COLLECTIONS } from "@/data/catalog";
 import { PROMISES } from "@/data/site";
-import { getProducts } from "@/lib/catalog";
-import { CollectionCard } from "@/components/CollectionCard";
-import { FreshTees } from "@/components/FreshTees";
-import { SuggestForm } from "@/components/SuggestForm";
-import { TEE_PATH } from "@/components/TeeArt";
+import { getProducts } from "@/lib/products";
+import { CollectionCard } from "@/components/shop/CollectionCard";
+import { FreshTees } from "@/components/shop/FreshTees";
+import { SuggestForm } from "@/components/shop/SuggestForm";
+import { TEE_PATH } from "@/components/shop/TeeArt";
 
 const wrap = { maxWidth: 1360, margin: "0 auto" } as const;
 const chip = { alignSelf: "flex-start", fontSize: 12, padding: "5px 10px", borderRadius: 999 } as const;
@@ -19,8 +19,8 @@ const marquee = (k: string) => [
   <span key={`${k}h`} style={{ color: "var(--accent)" }}>✦</span>,
 ];
 
-export default function Home() {
-  const tees = getProducts({ category: "tshirt" });
+export default async function Home() {
+  const tees = await getProducts({ category: "tshirt" });
 
   return (
     <>

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CATEGORIES, COLLECTIONS } from "@/data/catalog";
-import { getCollection, getProducts } from "@/lib/catalog";
+import { getCollection } from "@/lib/catalog";
+import { getProducts } from "@/lib/products";
 import type { CategoryId } from "@/lib/types";
-import { Listing, PageTitle } from "@/components/Listing";
+import { Listing, PageTitle } from "@/components/shop/Listing";
 
 export const dynamicParams = false;
 export const generateStaticParams = () => COLLECTIONS.map((c) => ({ slug: c.id }));
@@ -29,7 +30,7 @@ export default async function CollectionPage({
       <PageTitle eyebrow={`${collection.number} / collection`} title={collection.name} blurb={collection.blurb} />
       <Listing
         base={`/collections/${collection.id}`}
-        products={getProducts({ collection: collection.id, category })}
+        products={await getProducts({ collection: collection.id, category })}
         filters={{ category }}
       />
     </>

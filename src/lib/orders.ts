@@ -1,44 +1,13 @@
 import "server-only";
-import { createClient } from "@supabase/supabase-js";
-import { promises as fs } from "node:fs";
-import path from "node:path";
+import { dataFile, readJson as readJsonOrNull, requireFileFallback, supabase, writeJson } from "./db";
 import type { Order, OrderStatus } from "./types";
 
-/**
- * Order storage. Supabase when SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY are set;
- * otherwise a local JSON file (.data/) so `npm run dev` works with zero setup.
- * The file fallback is dev-only and refuses to run in production.
- */
+/** Order storage: see ./db for the Supabase / local-file switch. */
 
-const supabase =
-  process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY
-    ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, {
-        auth: { persistSession: false },
-      })
-    : null;
+const ORDERS_FILE = dataFile("orders.json");
+const SUGGEST_FILE = dataFile("suggestions.json");
 
-const DATA_DIR = path.join(process.cwd(), ".data");
-const ORDERS_FILE = path.join(DATA_DIR, "orders.json");
-const SUGGEST_FILE = path.join(DATA_DIR, "suggestions.json");
-
-function requireFileFallback() {
-  if (process.env.NODE_ENV === "production") {
-    throw new Error("Supabase is not configured (SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY).");
-  }
-}
-
-async function readJson<T>(file: string): Promise<T[]> {
-  try {
-    return JSON.parse(await fs.readFile(file, "utf8")) as T[];
-  } catch {
-    return [];
-  }
-}
-async function writeJson(file: string, data: unknown) {
-  await fs.mkdir(DATA_DIR, { recursive: true });
-  await fs.writeFile(file, JSON.stringify(data, null, 2));
-}
-
+const readJson = async <T>(file: string): Promise<T[]> => (await readJsonOrNull<T>(file)) ?? [];
 type Row = {
   code: number;
   access_token: string;

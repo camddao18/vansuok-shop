@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { CATEGORIES, COLLECTIONS } from "@/data/catalog";
-import { getProducts } from "@/lib/catalog";
+import { getProducts } from "@/lib/products";
 import type { CategoryId, CollectionId } from "@/lib/types";
-import { Listing, PageTitle } from "@/components/Listing";
+import { Listing, PageTitle } from "@/components/shop/Listing";
 
 export const metadata: Metadata = { title: "Shop — Vansuok Studio" };
 
@@ -14,7 +14,7 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
   const collection = COLLECTIONS.find((c) => c.id === sp.collection)?.id as CollectionId | undefined;
   const q = sp.q?.trim().slice(0, 60) || undefined;
 
-  const products = getProducts({ category, collection }).filter(
+  const products = (await getProducts({ category, collection })).filter(
     (p) => !q || p.name.toLowerCase().includes(q.toLowerCase()),
   );
 

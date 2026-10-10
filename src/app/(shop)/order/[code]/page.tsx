@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import { timingSafeEqual } from "node:crypto";
 import { formatVND } from "@/lib/money";
 import { getOrder } from "@/lib/orders";
-import { OrderWatcher } from "@/components/OrderWatcher";
-import { OrderSummary } from "@/components/OrderSummary";
+import { OrderWatcher } from "@/components/shop/OrderWatcher";
+import { OrderSummary } from "@/components/shop/OrderSummary";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Order — Vansuok Studio", robots: { index: false } };

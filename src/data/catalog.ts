@@ -7,7 +7,7 @@ export const CATEGORIES: Category[] = [
   { id: "keychain", name: "Keychain", label: "Keychains", available: false, hasSizes: false },
 ];
 
-/** New trades: add a row here + products with that `collection`, plus an art entry in components/CollectionArt. */
+/** New trades: add a row here + products with that `collection`, plus a THEMES entry in components/shop/CollectionCard. */
 export const COLLECTIONS: Collection[] = [
   {
     id: "trading",
@@ -42,15 +42,17 @@ export const COLLECTIONS: Collection[] = [
 const PLACEHOLDER_TEE_PRICE = 250000;
 
 const tee = (
-  p: Omit<Product, "price" | "category" | "description"> & { description?: string },
+  p: Omit<Product, "price" | "category" | "description" | "active"> & { description?: string },
 ): Product => ({
   category: "tshirt",
+  active: true,
   price: PLACEHOLDER_TEE_PRICE,
   description: "Profession-themed unisex tee in heavy 250gsm fabric. Sizes S–XXL.",
   ...p,
 });
 
-export const PRODUCTS: Product[] = [
+/** Seed for an empty store (first run). After that the products table / .data/products.json is the source of truth. */
+export const SEED_PRODUCTS: Product[] = [
   tee({
     id: "trading-01", slug: "trading-tee-01", name: "Trading Tee — No. 01", collection: "trading",
     tint: "#E9E7DF", art: { shirt: "#111111", ink: "#C6F432" },

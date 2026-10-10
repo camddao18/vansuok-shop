@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PRODUCTS } from "@/data/catalog";
-import { getCategory, getCollection, getProduct, getProducts } from "@/lib/catalog";
+import { getCategory, getCollection } from "@/lib/catalog";
+import { getProduct, getProducts } from "@/lib/products";
 import { formatVND } from "@/lib/money";
-import { AddToCart } from "@/components/AddToCart";
-import { ProductCard } from "@/components/ProductCard";
-import { TeeArt } from "@/components/TeeArt";
+import { AddToCart } from "@/components/shop/AddToCart";
+import { ProductCard } from "@/components/shop/ProductCard";
+import { TeeArt } from "@/components/shop/TeeArt";
 
-export const dynamicParams = false;
-export const generateStaticParams = () => PRODUCTS.map((p) => ({ slug: p.slug }));
+export const generateStaticParams = async () => (await getProducts()).map((p) => ({ slug: p.slug }));
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const p = getProduct((await params).slug);
+  const p = await getProduct((await params).slug);
   return { title: p ? `${p.name} — Vansuok Studio` : "Product", description: p?.description };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
-  const product = getProduct((await params).slug);
-  if (!product) notFound();
+  const product = await getProduct((await params).slug);
+  if (!product || !product.active) notFound();
   const collection = getCollection(product.collection);
   const category = getCategory(product.category);
-  const related = getProducts({ collection: product.collection }).filter((p) => p.id !== product.id);
+  const related = (await getProducts({ collection: product.collection })).filter((p) => p.id !== product.id);
 
   return (
     <>

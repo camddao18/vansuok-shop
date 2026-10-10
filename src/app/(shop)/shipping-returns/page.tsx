@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageTitle } from "@/components/Listing";
+import { PageTitle } from "@/components/shop/Listing";
 import { formatVND, FREE_SHIPPING_OVER, SHIPPING_FEE } from "@/lib/money";
 
 export const metadata: Metadata = { title: "Shipping & returns — Vansuok Studio" };
