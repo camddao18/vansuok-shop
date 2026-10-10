@@ -61,7 +61,7 @@ export function Header() {
           href="/shop#search"
           aria-label="Search"
           style={{
-            width: 46, height: 46, borderRadius: 999, border: "1.5px solid var(--text)", background: "transparent",
+            boxSizing: "border-box", width: 46, height: 46, borderRadius: 999, border: "1.5px solid var(--text)", background: "transparent",
             display: "flex", alignItems: "center", justifyContent: "center",
           }}
         >

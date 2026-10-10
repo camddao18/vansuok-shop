@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { COLLECTIONS } from "@/data/catalog";
+import { SOCIALS, STUDIO } from "@/data/site";
 
 const head = { fontSize: 13, opacity: 0.65 } as const;
 const col = { display: "flex", flexDirection: "column", gap: 10 } as const;
@@ -25,14 +26,14 @@ export function Footer() {
           </div>
           <div style={col}>
             <span className="mono" style={head}>FOLLOW</span>
-            <span>Instagram [@handle]</span>
-            <span>TikTok [@handle]</span>
-            <span>Facebook [link]</span>
+            {SOCIALS.map((s) => (
+              <span key={s.name}>{s.name} {s.handle}</span>
+            ))}
           </div>
           <div style={col}>
             <span className="mono" style={head}>STUDIO</span>
-            <span>[Studio address]</span>
-            <span>[Email · Phone]</span>
+            <span>{STUDIO.address}</span>
+            <span>{STUDIO.contact}</span>
           </div>
         </div>
         <div style={{ fontSize: "clamp(64px, 17vw, 260px)", fontWeight: 800, letterSpacing: "-0.06em", lineHeight: 0.8, display: "flex", alignItems: "baseline", gap: "0.04em" }}>

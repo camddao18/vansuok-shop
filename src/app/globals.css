@@ -1,7 +1,6 @@
 :root{--bg:#F3F2EC;--surface:#FFFFFF;--text:#111111;--muted:#45453F;--solid:#111111;--on-solid:#F3F2EC;--tee-on-solid:#2A2A2E;--btn:#111111;--on-btn:#FFFFFF;--accent:#FF5B1F;--on-accent:#111111;--second:#2B44FF;--on-second:#FFFFFF;--deep:#16245E;--pop:#C6F432;}
-*{box-sizing:border-box}
 .mono{font-family:var(--font-mono),'JetBrains Mono',ui-monospace,monospace}
-.vs-tab{min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid var(--text);background:transparent;color:var(--text);font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;text-decoration:none}
+.vs-tab{box-sizing:border-box;min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid var(--text);background:transparent;color:var(--text);font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;text-decoration:none}
 .vs-tab[aria-pressed="true"],.vs-tab[aria-current="true"]{background:var(--btn);border-color:var(--btn);color:var(--on-btn);font-weight:700}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;overflow-x:hidden}
@@ -15,9 +14,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .vs-card{transition:transform .25s ease}
 .vs-card:hover{transform:translateY(-6px)}
 @media (prefers-reduced-motion: reduce){.vs-track,.vs-spin{animation:none}.vs-card{transition:none}.vs-card:hover{transform:none}html{scroll-behavior:auto}}
-.vs-input{width:100%;min-height:52px;border-radius:16px;border:1.5px solid var(--text);background:var(--surface);padding:0 16px;font-family:inherit;font-size:16px;color:var(--text)}
+.vs-input{box-sizing:border-box;width:100%;min-height:52px;border-radius:16px;border:1.5px solid var(--text);background:var(--surface);padding:0 16px;font-family:inherit;font-size:16px;color:var(--text)}
 textarea.vs-input{padding:14px 16px;min-height:96px;resize:vertical}
 .vs-label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
-.vs-btn{min-height:56px;padding:0 28px;border-radius:999px;border:none;background:var(--btn);color:var(--on-btn);font-family:inherit;font-size:17px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none}
+.vs-btn{box-sizing:border-box;min-height:56px;padding:0 28px;border-radius:999px;border:none;background:var(--btn);color:var(--on-btn);font-family:inherit;font-size:17px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none}
 .vs-btn:disabled{opacity:.5;cursor:not-allowed}
 .vs-btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--text)}

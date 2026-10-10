@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CATEGORIES, COLLECTIONS } from "@/data/catalog";
+import { PROMISES } from "@/data/site";
 import { getProducts } from "@/lib/catalog";
 import { CollectionCard } from "@/components/CollectionCard";
 import { FreshTees } from "@/components/FreshTees";
@@ -9,11 +10,6 @@ import { TEE_PATH } from "@/components/TeeArt";
 const wrap = { maxWidth: 1360, margin: "0 auto" } as const;
 const chip = { alignSelf: "flex-start", fontSize: 12, padding: "5px 10px", borderRadius: 999 } as const;
 
-const promise = [
-  { k: "FABRIC", t: "[Fabric · weight]", d: "[Short note on thickness, fit and feel]" },
-  { k: "PRINT", t: "[Print method]", d: "[Color fastness, care instructions]" },
-  { k: "EXCHANGES", t: "[Return policy]", d: "[Time window, conditions, shipping fees]" },
-];
 
 const marquee = (k: string) => [
   <span key={`${k}a`}>TRADING TEES</span>, <span key={`${k}b`} style={{ color: "var(--accent)" }}>✦</span>,
@@ -163,11 +159,11 @@ export default function Home() {
       {/* PROMISE STRIP */}
       <section id="about" style={{ ...wrap, padding: "0 24px 80px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: 16 }}>
-          {promise.map((p) => (
-            <div key={p.k} style={{ background: "var(--surface)", borderRadius: 28, padding: 28, display: "flex", flexDirection: "column", gap: 10 }}>
-              <span className="mono" style={{ fontSize: 13, color: "var(--muted)" }}>{p.k}</span>
-              <span style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.02em" }}>{p.t}</span>
-              <span style={{ fontSize: 15, lineHeight: 1.5, color: "var(--muted)" }}>{p.d}</span>
+          {PROMISES.map((p) => (
+            <div key={p.key} style={{ background: "var(--surface)", borderRadius: 28, padding: 28, display: "flex", flexDirection: "column", gap: 10 }}>
+              <span className="mono" style={{ fontSize: 13, color: "var(--muted)" }}>{p.key}</span>
+              <span style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.02em" }}>{p.title}</span>
+              <span style={{ fontSize: 15, lineHeight: 1.5, color: "var(--muted)" }}>{p.note}</span>
             </div>
           ))}
         </div>

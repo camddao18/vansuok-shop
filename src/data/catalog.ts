@@ -46,7 +46,7 @@ const tee = (
 ): Product => ({
   category: "tshirt",
   price: PLACEHOLDER_TEE_PRICE,
-  description: "Profession-themed unisex tee. Sizes S–XXL.",
+  description: "Profession-themed unisex tee in heavy 250gsm fabric. Sizes S–XXL.",
   ...p,
 });
 

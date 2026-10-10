@@ -6,8 +6,8 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
-  subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "700", "800"],
+  subsets: ["latin", "latin-ext", "vietnamese"],
+  axes: ["opsz"], // variable weight + optical size, like the Google Fonts URL in index.html
   variable: "--font-display",
   display: "swap",
 });

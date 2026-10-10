@@ -41,7 +41,7 @@ export function ProductCard({ product }: { product: Product }) {
           </Link>
           <span style={{ fontSize: 14, color: "var(--muted)" }}>{sub}</span>
         </div>
-        <span style={{ fontSize: 19, fontWeight: 800 }}>{formatVND(product.price)}</span>
+        <span style={{ fontSize: 19, fontWeight: 800, whiteSpace: "nowrap" }}>{formatVND(product.price)}</span>
       </div>
       {/* Products have a size to choose, so "add" goes through the product page. */}
       <Link
