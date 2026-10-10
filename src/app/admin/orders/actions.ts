@@ -12,4 +12,5 @@ export async function changeStatus(formData: FormData) {
   if (!order || !NEXT_STATUS[order.status]?.some((s) => s.to === to)) return;
   await updateOrder(order.code, { status: to });
   revalidatePath("/admin/orders");
+  revalidatePath(`/admin/orders/${order.code}`);
 }

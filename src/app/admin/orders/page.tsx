@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { formatVND } from "@/lib/money";
 import { listOrders } from "@/lib/orders";
 import { NEXT_STATUS } from "@/lib/order-status";
 import { changeStatus } from "./actions";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Orders — Vansuok admin", robots: { index: false } };
+export const metadata: Metadata = { title: "Orders" };
 
 const th = { textAlign: "left", padding: "12px 14px", fontSize: 12, whiteSpace: "nowrap" } as const;
 const td = { padding: "12px 14px", verticalAlign: "top", borderTop: "1px solid #E9E7DF", fontSize: 14 } as const;
@@ -26,7 +27,7 @@ export default async function AdminOrders() {
           <tbody>
             {orders.map((o) => (
               <tr key={o.code}>
-                <td style={td} className="mono">#{String(o.code).slice(-8)}</td>
+                <td style={td} className="mono"><Link href={`/admin/orders/${o.code}`}>#{String(o.code).slice(-8)}</Link></td>
                 <td style={td}>{new Date(o.createdAt).toLocaleString("vi-VN")}</td>
                 <td style={{ ...td, fontWeight: 700 }}>{o.status}</td>
                 <td style={td}>VietQR</td>
