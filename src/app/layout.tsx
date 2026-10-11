@@ -16,6 +16,8 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  // Cần URL gốc tuyệt đối để ảnh chia sẻ (opengraph-image.png) có link đầy đủ khi gửi qua Messenger, Zalo...
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL?.startsWith("https://") ? process.env.NEXT_PUBLIC_SITE_URL : "https://vansuok-shop.vercel.app"),
   title: "Duck Delivery - Mỗi nghề một chất",
   description:
     "Áo thun theo chủ đề nghề nghiệp dành cho trader, thủy thủ, nail artist và nhiều nghề khác. Sticker và móc khóa sắp ra mắt.",
