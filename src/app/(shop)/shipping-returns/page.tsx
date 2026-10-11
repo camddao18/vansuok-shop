@@ -2,34 +2,34 @@ import type { Metadata } from "next";
 import { PageTitle } from "@/components/shop/Listing";
 import { formatVND, FREE_SHIPPING_OVER, SHIPPING_FEE } from "@/lib/money";
 
-export const metadata: Metadata = { title: "Shipping & returns — Vansuok Studio" };
+export const metadata: Metadata = { title: "Vận chuyển & đổi trả — Duck Delivery" };
 
-// TEMP wording. Replace the [bracketed] parts with the real policy.
+// Nội dung tạm. Thay các phần trong [ngoặc vuông] bằng chính sách thật.
 const blocks = [
   {
-    key: "SHIPPING",
-    title: "Shipping",
+    key: "VẬN CHUYỂN",
+    title: "Vận chuyển",
     lines: [
-      `Flat shipping fee of ${formatVND(SHIPPING_FEE)}. Free shipping on orders over ${formatVND(FREE_SHIPPING_OVER)}.`,
-      "Delivery time: [number of days].",
-      "We currently ship within Vietnam only.",
+      `Phí vận chuyển đồng giá ${formatVND(SHIPPING_FEE)}. Miễn phí vận chuyển cho đơn từ ${formatVND(FREE_SHIPPING_OVER)}.`,
+      "Thời gian giao hàng: [số ngày].",
+      "Hiện chúng tôi chỉ giao hàng trong Việt Nam.",
     ],
   },
   {
-    key: "PAYMENT",
-    title: "Payment",
+    key: "THANH TOÁN",
+    title: "Thanh toán",
     lines: [
-      "We accept bank transfer via VietQR. Scan the QR code with any banking app.",
-      "Your order is confirmed automatically as soon as the transfer arrives.",
+      "Chúng tôi nhận chuyển khoản qua VietQR. Quét mã QR bằng bất kỳ ứng dụng ngân hàng nào.",
+      "Đơn hàng được xác nhận tự động ngay khi nhận được tiền chuyển khoản.",
     ],
   },
   {
-    key: "EXCHANGES",
-    title: "Exchanges & returns",
+    key: "ĐỔI TRẢ",
+    title: "Đổi & trả hàng",
     lines: [
-      "Wrong size or a problem with your order? Contact us within [time window] of receiving it.",
-      "Conditions: [conditions, e.g. unworn, tags attached].",
-      "Return shipping fee: [who pays].",
+      "Sai size hoặc đơn hàng có vấn đề? Hãy liên hệ với chúng tôi trong vòng [thời hạn] kể từ khi nhận hàng.",
+      "Điều kiện: [điều kiện, VD: chưa mặc, còn nguyên tem mác].",
+      "Phí vận chuyển đổi trả: [bên chịu phí].",
     ],
   },
 ];
@@ -37,7 +37,7 @@ const blocks = [
 export default function ShippingReturnsPage() {
   return (
     <>
-      <PageTitle eyebrow="Help" title="Shipping & returns" />
+      <PageTitle eyebrow="Hỗ trợ" title="Vận chuyển & đổi trả" />
       <section style={{ maxWidth: 1360, margin: "0 auto", padding: "32px 24px 80px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: 16 }}>
         {blocks.map((b) => (
           <div key={b.key} style={{ background: "var(--surface)", borderRadius: 28, padding: 28, display: "flex", flexDirection: "column", gap: 14 }}>

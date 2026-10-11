@@ -1,5 +1,6 @@
 "use client";
 
+import { Req } from "./Req";
 import { useEffect, useState } from "react";
 
 interface Unit {
@@ -43,11 +44,11 @@ export function AddressFields() {
     return (
       <>
         <label className="vs-label">
-          Province / City
+          <span>Tỉnh / Thành phố<Req /></span>
           <input className="vs-input" name="province" autoComplete="address-level1" required maxLength={80} />
         </label>
         <label className="vs-label">
-          Ward / Commune
+          <span>Phường / Xã<Req /></span>
           <input className="vs-input" name="ward" autoComplete="address-level3" required maxLength={80} />
         </label>
       </>
@@ -57,7 +58,7 @@ export function AddressFields() {
   return (
     <>
       <label className="vs-label">
-        Province / City
+        <span>Tỉnh / Thành phố<Req /></span>
         <select
           className="vs-input" name="province" required disabled={!provinces} defaultValue=""
           onChange={(e) => {
@@ -65,14 +66,14 @@ export function AddressFields() {
             setProvinceCode(p ? String(p.code) : "");
           }}
         >
-          <option value="" disabled>{provinces ? "Select province / city" : "Loading…"}</option>
+          <option value="" disabled>{provinces ? "Chọn tỉnh / thành phố" : "Đang tải…"}</option>
           {provinces?.map((p) => <option key={p.code} value={p.name}>{p.name}</option>)}
         </select>
       </label>
       <label className="vs-label">
-        Ward / Commune
+        <span>Phường / Xã<Req /></span>
         <select className="vs-input" name="ward" required disabled={!wards.length} defaultValue="" key={provinceCode}>
-          <option value="" disabled>{provinceCode ? (wards.length ? "Select ward / commune" : "Loading…") : "Choose a province first"}</option>
+          <option value="" disabled>{provinceCode ? (wards.length ? "Chọn phường / xã" : "Đang tải…") : "Hãy chọn tỉnh / thành phố trước"}</option>
           {wards.map((w) => <option key={w.code} value={w.name}>{w.name}</option>)}
         </select>
       </label>

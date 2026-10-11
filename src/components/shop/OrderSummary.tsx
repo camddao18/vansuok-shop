@@ -4,16 +4,16 @@ export function OrderSummary({ subtotal, shipping, total }: { subtotal: number; 
   const row = { display: "flex", justifyContent: "space-between", gap: 12 } as const;
   return (
     <div style={{ background: "var(--surface)", borderRadius: 28, padding: 28, display: "flex", flexDirection: "column", gap: 14 }}>
-      <div style={row}><span>Subtotal</span><span>{formatVND(subtotal)}</span></div>
+      <div style={row}><span>Tạm tính</span><span>{formatVND(subtotal)}</span></div>
       <div style={row}>
-        <span>Shipping</span>
-        <span>{shipping === 0 ? "Free" : formatVND(shipping)}</span>
+        <span>Phí vận chuyển</span>
+        <span>{shipping === 0 ? "Miễn phí" : formatVND(shipping)}</span>
       </div>
       {shipping > 0 && (
-        <span style={{ fontSize: 14, color: "var(--muted)" }}>Free shipping over {formatVND(FREE_SHIPPING_OVER)}.</span>
+        <span style={{ fontSize: 14, color: "var(--muted)" }}>Miễn phí vận chuyển cho đơn từ {formatVND(FREE_SHIPPING_OVER)}.</span>
       )}
       <div style={{ ...row, fontSize: 22, fontWeight: 800, paddingTop: 14, borderTop: "1.5px solid var(--text)" }}>
-        <span>Total</span><span>{formatVND(total)}</span>
+        <span>Tổng cộng</span><span>{formatVND(total)}</span>
       </div>
     </div>
   );

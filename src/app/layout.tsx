@@ -16,14 +16,14 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vansuok Studio — T-shirts for every trade",
+  title: "Duck Delivery - Mỗi nghề một chất",
   description:
-    "Profession-themed tees for traders, sailors, nail artists & more. Stickers and keychains are next.",
+    "Áo thun theo chủ đề nghề nghiệp dành cho trader, thủy thủ, nail artist và nhiều nghề khác. Sticker và móc khóa sắp ra mắt.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable}`}>
+    <html lang="vi" className={`${display.variable} ${mono.variable}`}>
       <body>
         {children}
       </body>

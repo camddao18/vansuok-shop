@@ -4,7 +4,7 @@ import { getProducts } from "@/lib/products";
 import type { CategoryId, CollectionId } from "@/lib/types";
 import { Listing, PageTitle } from "@/components/shop/Listing";
 
-export const metadata: Metadata = { title: "Shop — Vansuok Studio" };
+export const metadata: Metadata = { title: "Cửa hàng — Duck Delivery" };
 
 type SP = { category?: string; collection?: string; q?: string };
 
@@ -20,8 +20,8 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
 
   return (
     <>
-      <PageTitle eyebrow="Shop" title="All merch" blurb="Every design, every trade. Pick a size on the product page." />
-      <Listing base="/shop" products={products} filters={{ category, collection, q }} showCollectionTabs showSearch />
+      <PageTitle eyebrow="Cửa hàng" title="Tất cả sản phẩm" blurb="Mọi thiết kế, mọi nghề. Chọn size ở trang sản phẩm." />
+      <Listing base="/shop" products={products} filters={{ category, collection, q }} showCollectionTabs />
     </>
   );
 }

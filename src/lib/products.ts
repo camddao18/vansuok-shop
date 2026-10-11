@@ -19,18 +19,19 @@ type Row = {
   colors: Product["colors"] | null;
   description: string;
   image: string | null;
+  images: string[] | null;
   active: boolean;
 };
 
 const fromRow = (r: Row): Product => ({
   id: r.id, slug: r.slug, name: r.name, category: r.category, collection: r.collection, price: r.price,
   tint: r.tint, art: r.art, colors: r.colors ?? undefined, description: r.description,
-  image: r.image ?? undefined, active: r.active,
+  image: r.image ?? undefined, images: r.images?.length ? r.images : undefined, active: r.active,
 });
 const toRow = (p: Product): Row => ({
   id: p.id, slug: p.slug, name: p.name, category: p.category, collection: p.collection, price: p.price,
   tint: p.tint, art: p.art, colors: p.colors?.length ? p.colors : null, description: p.description,
-  image: p.image ?? null, active: p.active,
+  image: p.image ?? null, images: p.images?.length ? p.images : null, active: p.active,
 });
 
 async function readAll(): Promise<Product[]> {
@@ -70,4 +71,14 @@ export async function saveProduct(product: Product): Promise<void> {
   if (i >= 0) all[i] = product;
   else all.push(product);
   await writeJson(PRODUCTS_FILE, all);
+}
+
+export async function deleteProduct(id: string): Promise<void> {
+  if (supabase) {
+    const { error } = await supabase.from("products").delete().eq("id", id);
+    if (error) throw new Error(`deleteProduct: ${error.message}`);
+    return;
+  }
+  requireFileFallback();
+  await writeJson(PRODUCTS_FILE, (await readAll()).filter((p) => p.id !== id));
 }

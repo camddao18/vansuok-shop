@@ -8,7 +8,7 @@ export interface LoginState { error?: string }
 
 export async function login(_prev: LoginState, form: FormData): Promise<LoginState> {
   const password = process.env.ADMIN_PASSWORD;
-  if (!password) return { error: "ADMIN_PASSWORD is not set on the server." };
+  if (!password) return { error: "Máy chủ chưa đặt ADMIN_PASSWORD." };
 
   const user = String(form.get("username") ?? "");
   const pass = String(form.get("password") ?? "");
@@ -16,7 +16,7 @@ export async function login(_prev: LoginState, form: FormData): Promise<LoginSta
   const ok = safeEqual(user, "admin") && safeEqual(pass, password);
   if (!ok) {
     await new Promise((r) => setTimeout(r, 800)); // slows down guessing
-    return { error: "Wrong username or password." };
+    return { error: "Sai tên đăng nhập hoặc mật khẩu." };
   }
 
   (await cookies()).set(SESSION_COOKIE, await createSessionToken(), {

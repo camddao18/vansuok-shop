@@ -1,8 +1,8 @@
 export type CategoryId = "tshirt" | "sticker" | "keychain";
 export type CollectionId = "trading" | "navy" | "nails";
-export type Size = "S" | "M" | "L" | "XL" | "XXL";
+export type Size = "S" | "M" | "L" | "XL";
 
-export const SIZES: Size[] = ["S", "M", "L", "XL", "XXL"];
+export const SIZES: Size[] = ["S", "M", "L", "XL"];
 
 export interface Category {
   id: CategoryId;
@@ -44,6 +44,8 @@ export interface Product {
   description: string;
   /** If set, replaces the drawn stand-in. Square 1:1 photo. */
   image?: string;
+  /** Gallery photos in display order; `image` is always the first one. */
+  images?: string[];
   /** Inactive products are hidden from the shop and cannot be ordered. */
   active: boolean;
 }
@@ -56,7 +58,7 @@ export interface CartLine {
 }
 
 /** Add providers here (e.g. "stripe") when international payments are wanted. */
-export type PaymentMethod = "payos";
+export type PaymentMethod = "payos" | "cod";
 export type OrderStatus = "pending" | "paid" | "shipped" | "completed" | "cancelled";
 
 export interface OrderItem {
@@ -71,6 +73,8 @@ export interface OrderItem {
 export interface Order {
   code: number; // numeric: doubles as the payOS orderCode
   accessToken: string; // required to view the public confirmation page
+  /** Set when the buyer was signed in; lets them find the order in their account. */
+  customerId?: string;
   status: OrderStatus;
   paymentMethod: PaymentMethod;
   items: OrderItem[];

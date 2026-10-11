@@ -18,6 +18,7 @@ type Row = {
   shipping_fee: number;
   total: number;
   customer: Order["customer"];
+  customer_id: string | null;
   payment_link_id: string | null;
   checkout_url: string | null;
   created_at: string;
@@ -33,6 +34,7 @@ const fromRow = (r: Row): Order => ({
   shippingFee: r.shipping_fee,
   total: r.total,
   customer: r.customer,
+  customerId: r.customer_id ?? undefined,
   paymentLinkId: r.payment_link_id ?? undefined,
   checkoutUrl: r.checkout_url ?? undefined,
   createdAt: r.created_at,
@@ -48,6 +50,7 @@ const toRow = (o: Order): Row => ({
   shipping_fee: o.shippingFee,
   total: o.total,
   customer: o.customer,
+  customer_id: o.customerId ?? null,
   payment_link_id: o.paymentLinkId ?? null,
   checkout_url: o.checkoutUrl ?? null,
   created_at: o.createdAt,
@@ -93,6 +96,20 @@ export async function updateOrder(
   const i = all.findIndex((o) => o.code === code);
   if (i >= 0) all[i] = { ...all[i], ...patch };
   await writeJson(ORDERS_FILE, all);
+}
+
+export async function listOrdersForCustomer(customerId: string): Promise<Order[]> {
+  if (supabase) {
+    const { data, error } = await supabase
+      .from("orders")
+      .select("*")
+      .eq("customer_id", customerId)
+      .order("created_at", { ascending: false });
+    if (error) throw new Error(`listOrdersForCustomer: ${error.message}`);
+    return (data as Row[]).map(fromRow);
+  }
+  requireFileFallback();
+  return (await readJson<Order>(ORDERS_FILE)).filter((o) => o.customerId === customerId).reverse();
 }
 
 export async function listOrders(limit = 200): Promise<Order[]> {

@@ -6,7 +6,7 @@ create table if not exists orders (
   access_token    text not null,                 -- secret in the confirmation URL
   status          text not null default 'pending'
                   check (status in ('pending','paid','shipped','completed','cancelled')),
-  payment_method  text not null check (payment_method in ('payos')),
+  payment_method  text not null check (payment_method in ('payos','cod')),
   items           jsonb not null,
   subtotal        integer not null,
   shipping_fee    integer not null,

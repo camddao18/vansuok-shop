@@ -30,7 +30,7 @@ Landing page + storefront for **Vansuok Studio**: profession-themed T-shirts, or
 | `--second` / `--on-second` | `#2B44FF` / `#FFFFFF` | Cobalt blocks |
 | `--deep` | `#16245E` | Navy collection |
 | `--pop` | `#C6F432` | Lime highlight on black (Trading) |
-| Product tints | `#E9E7DF` `#DCE9B0` `#D5DBF3` `#FFD9C7` | Product image backgrounds |
+| Product tints | `#E9E7DF` `#DCE9B0` `#D5DBF3` | Product image backgrounds |
 
 Alternative palettes (Night Shift, Mint & Grape, Varsity) exist on the design canvas. Keep colors as CSS variables so a theme swap stays cheap.
 

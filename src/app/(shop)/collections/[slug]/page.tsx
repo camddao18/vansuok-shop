@@ -11,7 +11,7 @@ export const generateStaticParams = () => COLLECTIONS.map((c) => ({ slug: c.id }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const c = getCollection((await params).slug);
-  return { title: c ? `${c.name} collection — Vansuok Studio` : "Collection" };
+  return { title: c ? `Bộ sưu tập ${c.name} — Duck Delivery` : "Bộ sưu tập" };
 }
 
 export default async function CollectionPage({
@@ -27,7 +27,7 @@ export default async function CollectionPage({
 
   return (
     <>
-      <PageTitle eyebrow={`${collection.number} / collection`} title={collection.name} blurb={collection.blurb} />
+      <PageTitle eyebrow={`${collection.number} / bộ sưu tập`} title={collection.name} blurb={collection.blurb} />
       <Listing
         base={`/collections/${collection.id}`}
         products={await getProducts({ collection: collection.id, category })}

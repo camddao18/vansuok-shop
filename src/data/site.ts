@@ -6,28 +6,28 @@
 export const PROMISES = [
   {
     key: "FABRIC",
-    title: "Heavy fabric · 250gsm",
-    note: "Thick and sturdy, it holds its shape. A tee that feels substantial.", // TEMP wording
+    title: "Cotton 100% · 250gsm",
+    note: "Vải dày dặn, đứng form, cầm lên là thấy chất. Thấm hút tốt, mặc cả ngày không bí.",
   },
   {
     key: "PRINT",
-    title: "[Print method]",
-    note: "Made to last. Wash inside out in cold water and skip the dryer.", // TEMP wording
+    title: "In DTF sắc nét, bền màu",
+    note: "Màu lên chuẩn, mịn tay, giặt nhiều vẫn giữ hình. Giặt lộn trái bằng nước lạnh và không sấy để bền lâu.",
   },
   {
-    key: "EXCHANGES",
-    title: "Easy exchanges",
-    note: "Size doesn't fit? Contact us after you receive your order. Time window and conditions: [to be confirmed].", // TEMP wording
+    key: "SHIPPING",
+    title: "Freeship toàn quốc từ 500k",
+    note: "Đơn từ 500.000đ được miễn phí giao hàng, từ Bắc vào Nam. Áo đóng gói kỹ, có mã theo dõi, giao trong [số ngày] ngày.",
   },
 ] as const;
 
 export const STUDIO = {
-  address: "[Studio address]",
-  contact: "[Email · Phone]",
+  address: "[Địa chỉ studio]",
+  contact: "[Email · Điện thoại]",
 };
 
 export const SOCIALS = [
   { name: "Instagram", handle: "[@handle]" },
   { name: "TikTok", handle: "[@handle]" },
-  { name: "Facebook", handle: "[link]" },
+  { name: "Facebook", handle: "[liên kết]" },
 ];

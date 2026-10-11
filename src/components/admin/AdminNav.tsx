@@ -4,15 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const GROUPS: { title: string; links: { href: string; label: string; exact?: boolean }[] }[] = [
-  { title: "OVERVIEW", links: [{ href: "/admin", label: "Dashboard", exact: true }] },
-  { title: "SALES", links: [{ href: "/admin/orders", label: "Orders" }] },
-  { title: "CATALOG", links: [{ href: "/admin/products", label: "Products" }] },
+  { title: "TỔNG QUAN", links: [{ href: "/admin", label: "Bảng điều khiển", exact: true }] },
+  { title: "BÁN HÀNG", links: [{ href: "/admin/orders", label: "Đơn hàng" }] },
+  { title: "DANH MỤC", links: [{ href: "/admin/products", label: "Sản phẩm" }] },
 ];
 
 export function AdminNav() {
   const pathname = usePathname();
   return (
-    <nav className="ad-nav" aria-label="Admin">
+    <nav className="ad-nav" aria-label="Quản trị">
       {GROUPS.map((g) => (
         <div key={g.title} className="ad-group">
           <span className="mono ad-group-title">{g.title}</span>
