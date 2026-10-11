@@ -54,7 +54,9 @@ export function CollectionCard({ collection }: { collection: Collection }) {
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
         <span className="vs-ctitle" style={{ fontSize: 40, fontWeight: 800, letterSpacing: "-0.04em", lineHeight: 1 }}>{collection.name}</span>
         <span className="vs-cblurb" style={{ fontSize: 16, lineHeight: 1.45, opacity: t.blurbOpacity }}>{collection.blurb}</span>
-        <span style={{ marginTop: 8, fontWeight: 700, color: t.link }}>Xem bộ sưu tập <span className="vs-arrow">→</span></span>
+        <span className="vs-clink" style={{ marginTop: 8, fontWeight: 700, color: t.link }}>
+          <span className="vs-clink-long">Xem bộ sưu tập</span><span className="vs-clink-short">Collection</span> <span className="vs-arrow">→</span>
+        </span>
       </div>
     </Link>
   );

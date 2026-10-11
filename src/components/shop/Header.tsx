@@ -163,8 +163,9 @@ export function Header() {
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ stroke: "var(--on-btn)" }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M5 8h14l-1.2 12H6.2z" />
-              <path d="M9 8a3 3 0 0 1 6 0" />
+              <path d="M2.5 3.5h2.6l2.1 10.2a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.55-1.2L20 7.5H6" />
+              <circle cx="9.5" cy="19.5" r="1.3" />
+              <circle cx="17" cy="19.5" r="1.3" />
             </svg>
             <span className="vs-cart-label">Giỏ hàng</span>
             <span

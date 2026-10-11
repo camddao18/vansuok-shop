@@ -17,7 +17,7 @@ export default function AboutPage() {
         {PROMISES.map((p) => (
           <div key={p.key} className="vs-promise" style={{ background: "var(--surface)", borderRadius: 28, padding: 28, display: "flex", flexDirection: "column", gap: 10 }}>
             <span className="mono" style={{ fontSize: 13, color: "var(--muted)" }}>{p.key}</span>
-            <span style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.02em" }}>{p.title}</span>
+            <span className="vs-ptitle" style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.02em" }}>{p.title}</span>
             <span style={{ fontSize: 15, lineHeight: 1.5, color: "var(--muted)" }}>{p.note}</span>
           </div>
         ))}

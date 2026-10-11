@@ -82,16 +82,28 @@ export default async function Home() {
               <img src="/hero-navy.webp" alt="Áo thun in biểu đồ và chữ “I don’t need a rollercoaster. My account does that for free”" style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }} />
             }
           />
-          <div style={{ borderRadius: 32, background: "var(--accent)", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <div className="vs-spin" style={{ width: 168, height: 168 }}>
-              <svg viewBox="0 0 200 200" style={{ width: "100%", height: "100%" }} role="img" aria-label="Huy hiệu: áo thun, sticker, móc khóa và nhiều phụ kiện khác">
-                <defs><path id="vs-circle" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0" /></defs>
-                <text fontFamily="JetBrains Mono, monospace" fontSize="13" fontWeight="700" style={{ fill: "var(--on-accent)" }}><textPath href="#vs-circle" textLength="460" lengthAdjust="spacing">{"T-SHIRT ✦ STICKER ✦ KEYCHAIN ✦ ACCESSORIES ✦ "}</textPath></text>
-                <circle cx="100" cy="100" r="34" style={{ fill: "var(--on-accent)" }} />
-                <path d="M100 82 L104 96 L118 100 L104 104 L100 118 L96 104 L82 100 L96 96 Z" style={{ fill: "var(--accent)" }} />
-              </svg>
-            </div>
-          </div>
+          <FlipCard
+            label="Lật thẻ: ưu đãi freeship"
+            style={{ borderRadius: 32 }}
+            front={
+              <div style={{ height: "100%", background: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div className="vs-spin" style={{ width: 168, height: 168 }}>
+                  <svg viewBox="0 0 200 200" style={{ width: "100%", height: "100%" }} role="img" aria-label="Huy hiệu: áo thun, sticker, móc khóa và nhiều phụ kiện khác">
+                    <defs><path id="vs-circle" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0" /></defs>
+                    <text fontFamily="JetBrains Mono, monospace" fontSize="13" fontWeight="700" style={{ fill: "var(--on-accent)" }}><textPath href="#vs-circle" textLength="460" lengthAdjust="spacing">{"T-SHIRT ✦ STICKER ✦ KEYCHAIN ✦ ACCESSORIES ✦ "}</textPath></text>
+                    <circle cx="100" cy="100" r="34" style={{ fill: "var(--on-accent)" }} />
+                    <path d="M100 82 L104 96 L118 100 L104 104 L100 118 L96 104 L82 100 L96 96 Z" style={{ fill: "var(--accent)" }} />
+                  </svg>
+                </div>
+              </div>
+            }
+            back={
+              <div style={{ height: "100%", boxSizing: "border-box", background: "var(--accent)", color: "var(--on-accent)", padding: 24, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <span className="mono" style={{ fontSize: 12, letterSpacing: "0.08em", opacity: 0.7 }}>ƯU ĐÃI</span>
+                <span style={{ fontSize: 30, lineHeight: 1.05, fontWeight: 800, letterSpacing: "-0.03em" }}>Freeship<br />đơn từ 500k</span>
+              </div>
+            }
+          />
         </div>
       </section>
 
@@ -139,7 +151,7 @@ export default async function Home() {
           {PROMISES.map((p) => (
             <div key={p.key} className="vs-promise" style={{ background: "var(--surface)", borderRadius: 28, padding: 28, display: "flex", flexDirection: "column", gap: 10 }}>
               <span className="mono" style={{ fontSize: 13, color: "var(--muted)" }}>{p.key}</span>
-              <span style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.02em" }}>{p.title}</span>
+              <span className="vs-ptitle" style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.02em" }}>{p.title}</span>
               <span style={{ fontSize: 15, lineHeight: 1.5, color: "var(--muted)" }}>{p.note}</span>
             </div>
           ))}
