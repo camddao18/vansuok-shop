@@ -114,7 +114,7 @@ export default async function Home() {
             lines={[{ text: "Mỗi nghề," }, { text: "một chất.", italic: true }]}
             style={{ margin: 0, fontSize: "clamp(56px, 5.4vw, 76px)", lineHeight: 0.95, letterSpacing: "-0.04em", fontWeight: 800 }}
           />
-          <p style={{ margin: 0, maxWidth: 640, fontSize: 17, lineHeight: 1.5, color: "var(--muted)" }}>
+          <p style={{ margin: 0, maxWidth: 640, fontSize: 15, lineHeight: 1.5, color: "var(--muted)" }}>
             Không phải ai cũng hiểu, và vì vậy mới vui.<br />Customize cho dân trong nghề, từ áo thun đến sticker, móc khóa.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default async function Home() {
       <section id="about" style={{ ...wrap, padding: "0 24px 80px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: 16 }}>
           {PROMISES.map((p) => (
-            <div key={p.key} style={{ background: "var(--surface)", borderRadius: 28, padding: 28, display: "flex", flexDirection: "column", gap: 10 }}>
+            <div key={p.key} className="vs-promise" style={{ background: "var(--surface)", borderRadius: 28, padding: 28, display: "flex", flexDirection: "column", gap: 10 }}>
               <span className="mono" style={{ fontSize: 13, color: "var(--muted)" }}>{p.key}</span>
               <span style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.02em" }}>{p.title}</span>
               <span style={{ fontSize: 15, lineHeight: 1.5, color: "var(--muted)" }}>{p.note}</span>
@@ -150,7 +150,7 @@ export default async function Home() {
       <section id="merch" style={{ ...wrap, padding: "0 24px 80px", display: "flex", flexDirection: "column", gap: 32 }}>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: 24 }}>
           <h2 style={{ margin: 0, fontSize: "clamp(28px, 3vw, 40px)", lineHeight: 1, letterSpacing: "-0.04em", fontWeight: 800 }}>Hơn cả một chiếc áo<span style={{ color: "var(--second)" }}>.</span></h2>
-          <p style={{ margin: 0, maxWidth: 380, fontSize: 17, lineHeight: 1.5, color: "var(--muted)" }}>Những thiết kế theo nghề ấy, trên những món đồ bạn mang theo mỗi ngày.</p>
+          <p style={{ margin: 0, maxWidth: 380, fontSize: 15, lineHeight: 1.5, color: "var(--muted)" }}>Những thiết kế theo nghề ấy, trên những món đồ bạn mang theo mỗi ngày.</p>
         </div>
         <div className="vs-mgrid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))", gap: 16 }}>
           {CATEGORIES.map((c) =>
@@ -185,8 +185,8 @@ export default async function Home() {
         <div style={{ background: "var(--second)", color: "#FFFFFF", borderRadius: 40, padding: "clamp(32px, 5vw, 72px)", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(420px, 100%), 1fr))", gap: 40, alignItems: "end", position: "relative", overflow: "hidden" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
             <span className="mono" style={{ alignSelf: "flex-start", fontSize: 13, padding: "6px 12px", borderRadius: 999, background: "#FFFFFF", color: "var(--second)" }}>BỘ SƯU TẬP TIẾP THEO</span>
-            <h2 style={{ margin: 0, fontSize: "clamp(28px, 3.2vw, 44px)", lineHeight: 0.95, letterSpacing: "-0.04em", fontWeight: 800 }}>Nghề của bạn<br />chưa có áo thun?</h2>
-            <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, maxWidth: 440, opacity: 0.9 }}>Hãy cho chúng tôi biết bạn làm nghề gì và câu đùa nội bộ yêu thích. Bộ sưu tập tiếp theo có thể là của bạn.</p>
+            <h2 style={{ margin: 0, fontSize: "clamp(28px, 3.2vw, 44px)", lineHeight: 1.15, letterSpacing: "-0.035em", fontWeight: 800 }}>Nghề của bạn<br />chưa có áo thun?</h2>
+            <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, maxWidth: 440, opacity: 0.9 }}>Hãy cho chúng tôi biết bạn làm nghề gì và câu đùa nội bộ yêu thích. Bộ sưu tập tiếp theo có thể là của bạn.</p>
           </div>
           <SuggestForm />
         </div>

@@ -72,7 +72,7 @@ export function PageTitle({ eyebrow, title, blurb }: { eyebrow?: string; title: 
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
         {eyebrow && <span className="mono" style={{ fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--muted)" }}>{eyebrow}</span>}
         <h1 style={{ margin: 0, fontSize: "clamp(44px, 4vw, 56px)", lineHeight: 0.95, letterSpacing: "-0.04em", fontWeight: 800 }}>{title}</h1>
-        {blurb && <p style={{ margin: 0, maxWidth: 560, fontSize: 17, lineHeight: 1.5, color: "var(--muted)" }}>{blurb}</p>}
+        {blurb && <p style={{ margin: 0, maxWidth: 560, fontSize: 15, lineHeight: 1.5, color: "var(--muted)" }}>{blurb}</p>}
       </div>
     </div>
   );

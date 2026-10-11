@@ -190,3 +190,14 @@ textarea.vs-input{padding:14px 16px;min-height:96px;resize:vertical}
 .vs-pcard .vs-padd{transition:background-color .15s,transform .15s}
 .vs-pcard .vs-padd:hover,.vs-pcard .vs-padd:focus-visible{background:#F2421B!important;transform:scale(1.08)}
 .vs-pcard .vs-padd:active{transform:scale(.94)}
+/* Nút đen (Thêm vào giỏ, v.v.): đổi sang cam khi rê chuột, cùng màu với nút giỏ trên thẻ sản phẩm */
+@media (hover:hover){.vs-btn:not(.vs-btn-ghost):hover:not(:disabled){background:#F2421B;color:#fff}}
+/* Chừa thêm khoảng giữa logo vịt và dòng chữ bên dưới (desktop và mobile) */
+.vs-intro-logo{margin-bottom:12px}
+/* Thẻ cam kết (vải, in, giao hàng): nổi lên và đổi nền sang xanh lá nhạt (#DAFD87, cùng màu nền màn mở đầu) khi rê chuột (chỉ thiết bị có chuột) */
+.vs-promise{transition:transform .25s ease,background-color .25s ease}
+@media (hover:hover){.vs-promise:hover{transform:translateY(-4px);background:#DAFD87!important}}
+@media (prefers-reduced-motion: reduce){.vs-promise{transition:none}.vs-promise:hover{transform:none}}
+/* Ô nhập gợi ý nghề: 15px trên desktop; giữ 16px trên điện thoại để iOS không tự phóng to khi bấm vào */
+.vs-suggest-input{font-size:15px;color:#111111}
+@media (max-width:559px){.vs-suggest-input{font-size:16px}}

@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer style={{ background: "var(--solid)", color: "var(--on-solid)", borderRadius: "40px 40px 0 0", padding: "64px 24px 32px" }}>
       <div style={{ maxWidth: 1360, margin: "0 auto", display: "flex", flexDirection: "column", gap: 48 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: 32 }}>
+        <div style={{ display: "grid", fontSize: 15, gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: 32 }}>
           <div style={col}>
             <span className="mono" style={head}>BỘ SƯU TẬP</span>
             {COLLECTIONS.map((c) => (

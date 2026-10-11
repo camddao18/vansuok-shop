@@ -28,13 +28,13 @@ export function SuggestForm() {
       <label htmlFor="vs-trade" style={{ fontSize: 15, fontWeight: 700 }}>Nghề nghiệp của bạn<Req /></label>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 10, background: "#FFFFFF", borderRadius: 999, padding: 6 }}>
         <input
-          id="vs-trade" type="text" value={trade} onChange={(e) => setTrade(e.target.value)} required maxLength={100}
+          id="vs-trade" className="vs-suggest-input" type="text" value={trade} onChange={(e) => setTrade(e.target.value)} required maxLength={100}
           placeholder="VD: Barista, Kiến trúc sư, Lập trình viên…"
-          style={{ flex: "1 1 200px", minWidth: 0, minHeight: 48, border: "none", outline: "none", background: "transparent", padding: "0 18px", fontFamily: "inherit", fontSize: 16, color: "#111111" }}
+          style={{ flex: "1 1 200px", minWidth: 0, minHeight: 44, border: "none", outline: "none", background: "transparent", padding: "0 16px", fontFamily: "inherit", color: "#111111" }}
         />
         <button
           type="submit" disabled={state === "sending"}
-          style={{ minHeight: 52, padding: "0 26px", borderRadius: 999, border: "none", background: "#111111", color: "#FFFFFF", fontFamily: "inherit", fontWeight: 700, fontSize: 16, cursor: "pointer" }}
+          style={{ minHeight: 44, padding: "0 22px", borderRadius: 999, border: "none", background: "#111111", color: "#FFFFFF", fontFamily: "inherit", fontWeight: 700, fontSize: 15, cursor: "pointer" }}
         >
           {state === "sending" ? "Đang gửi…" : "Gửi đi"}
         </button>

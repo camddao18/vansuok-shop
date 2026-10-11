@@ -188,19 +188,21 @@ export function Intro() {
         CHẠM VÀO ĐỂ NGHE TIẾNG EM NÈ HIHI
       </span>
 
-      <button
-        type="button" onClick={dismiss} aria-label="Vào cửa hàng"
-        style={{
-          position: "absolute", bottom: 24, left: "50%", marginLeft: -22, zIndex: 3, width: 44, height: 44, borderRadius: 999,
-          border: "2px solid var(--on-accent)", background: "var(--on-accent)", color: "var(--accent)", cursor: "pointer",
-          display: "flex", alignItems: "center", justifyContent: "center", padding: 0,
-        }}
-        className="vs-cue"
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M12 5v14M5 12l7 7 7-7" />
-        </svg>
-      </button>
+      <div style={{ position: "absolute", bottom: 24, left: 0, right: 0, zIndex: 3, display: "flex", justifyContent: "center", pointerEvents: "none" }}>
+        <button
+          type="button" onClick={dismiss} aria-label="Vào cửa hàng" className="vs-cue"
+          style={{
+            pointerEvents: "auto", height: 44, padding: "0 20px 0 22px", borderRadius: 999, border: "2px solid var(--on-accent)",
+            background: "var(--on-accent)", color: "#FFFFFF", cursor: "pointer", fontFamily: "inherit", fontSize: 14, fontWeight: 700,
+            display: "inline-flex", alignItems: "center", gap: 10,
+          }}
+        >
+          Vào cửa hàng
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </button>
+      </div>
     </section>
   );
 }
