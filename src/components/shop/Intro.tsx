@@ -5,12 +5,12 @@ import { usePathname } from "next/navigation";
 
 /** Drifting product icons. `d` is the parallax depth in px, `rot` the resting tilt. */
 const FLOATERS: { icon: string; left: string; top: string; size: string; d: number; rot: number; delay: number }[] = [
-  { icon: "ao-thun", left: "7%", top: "16%", size: "clamp(64px, 10vw, 130px)", d: 34, rot: -12, delay: 0 },
-  { icon: "sticker", left: "80%", top: "12%", size: "clamp(56px, 8vw, 110px)", d: 22, rot: 10, delay: 0.6 },
-  { icon: "moc-khoa", left: "86%", top: "58%", size: "clamp(56px, 8.5vw, 116px)", d: 40, rot: 14, delay: 1.1 },
-  { icon: "trading", left: "5%", top: "62%", size: "clamp(70px, 11vw, 140px)", d: 28, rot: 8, delay: 0.3 },
-  { icon: "navy", left: "72%", top: "80%", size: "clamp(60px, 9vw, 120px)", d: 18, rot: -8, delay: 0.9 },
-  { icon: "nails", left: "22%", top: "82%", size: "clamp(52px, 7.5vw, 100px)", d: 44, rot: 12, delay: 1.4 },
+  { icon: "ao-thun", left: "7%", top: "16%", size: "clamp(40px, 10vw, 130px)", d: 34, rot: -12, delay: 0 },
+  { icon: "sticker", left: "80%", top: "12%", size: "clamp(36px, 8vw, 110px)", d: 22, rot: 10, delay: 0.6 },
+  { icon: "moc-khoa", left: "86%", top: "58%", size: "clamp(36px, 8.5vw, 116px)", d: 40, rot: 14, delay: 1.1 },
+  { icon: "trading", left: "5%", top: "62%", size: "clamp(44px, 11vw, 140px)", d: 28, rot: 8, delay: 0.3 },
+  { icon: "navy", left: "72%", top: "80%", size: "clamp(38px, 9vw, 120px)", d: 18, rot: -8, delay: 0.9 },
+  { icon: "nails", left: "22%", top: "82%", size: "clamp(34px, 7.5vw, 100px)", d: 44, rot: 12, delay: 1.4 },
 ];
 
 /** These three are drawn in light colours for the dark cards; the intro background is light, so use darker versions. */
@@ -160,7 +160,7 @@ export function Intro() {
       onTransitionEnd={(e) => { if (e.target === e.currentTarget) setGone(true); }}
       style={{
         position: "fixed", inset: 0, zIndex: 100, overflow: "hidden", background: "#DAFD87", color: "var(--on-accent)",
-        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 20, cursor: "pointer",
+        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 14, cursor: "pointer",
         transform: leaving ? "translateY(-100%)" : "none", transition: "transform .8s cubic-bezier(.7,0,.2,1)",
         userSelect: "none", WebkitUserSelect: "none", touchAction: "manipulation",
         ["--mx" as string]: 0, ["--my" as string]: 0,
@@ -175,29 +175,29 @@ export function Intro() {
         </div>
       ))}
 
-      <div className="vs-tilt" style={{ position: "relative", zIndex: 2, width: "min(78vw, 52svh, 520px)" }}>
+      <div className="vs-tilt vs-intro-logo" style={{ position: "relative", zIndex: 2 }}>
         <div ref={duck}>
           <img src="/logo.png" alt="Duck Delivery" width={1682} height={1525} draggable={false} style={{ display: "block", width: "100%", height: "auto" }} />
         </div>
       </div>
 
-      <p style={{ margin: 0, zIndex: 2, textAlign: "center", fontWeight: 800, letterSpacing: "-0.03em", fontSize: "clamp(30px, 3vw, 40px)", lineHeight: 1.05 }}>
+      <p style={{ margin: 0, zIndex: 2, textAlign: "center", fontWeight: 800, letterSpacing: "-0.03em", fontSize: "clamp(20px, 3vw, 40px)", lineHeight: 1.05 }}>
         Áo thun cho mọi nghề<span style={{ color: "var(--second)" }}>.</span>
       </p>
-      <span className="mono" aria-hidden="true" style={{ zIndex: 2, fontSize: 13, textAlign: "center", padding: "0 16px", letterSpacing: "0.12em", opacity: 0.7 }}>
+      <span className="mono" aria-hidden="true" style={{ zIndex: 2, fontSize: "clamp(10px, 1.2vw + 5px, 13px)", textAlign: "center", padding: "0 16px", letterSpacing: "0.1em", opacity: 0.7 }}>
         CHẠM VÀO ĐỂ NGHE TIẾNG EM NÈ HIHI
       </span>
 
       <button
         type="button" onClick={dismiss} aria-label="Vào cửa hàng"
         style={{
-          position: "absolute", bottom: 24, left: "50%", marginLeft: -28, zIndex: 3, width: 56, height: 56, borderRadius: 999,
+          position: "absolute", bottom: 24, left: "50%", marginLeft: -22, zIndex: 3, width: 44, height: 44, borderRadius: 999,
           border: "2px solid var(--on-accent)", background: "var(--on-accent)", color: "var(--accent)", cursor: "pointer",
           display: "flex", alignItems: "center", justifyContent: "center", padding: 0,
         }}
         className="vs-cue"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M12 5v14M5 12l7 7 7-7" />
         </svg>
       </button>

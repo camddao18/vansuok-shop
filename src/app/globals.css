@@ -149,10 +149,9 @@ textarea.vs-input{padding:14px 16px;min-height:96px;resize:vertical}
 @media (max-width:559px){
   .vs-pgrid{gap:10px}
   .vs-pcard{padding:8px!important;border-radius:22px!important;gap:10px!important}
-  .vs-pcard .vs-pinfo{flex-direction:column!important;gap:4px!important;padding:2px 6px!important}
+  .vs-pcard .vs-pinfo{gap:3px!important;padding:2px 6px!important}
   .vs-pcard .vs-pinfo a{font-size:14px!important}
-  .vs-pcard .vs-pinfo>span{font-size:15px!important}
-  .vs-pcard .vs-padd{font-size:13px!important;min-height:40px!important}
+  .vs-pcard .vs-padd{width:38px!important;height:38px!important}
 }
 .vs-pgrid>:nth-child(3n+1){--pt:#E9E7DF}
 .vs-pgrid>:nth-child(3n+2){--pt:#D5DBF3}
@@ -182,3 +181,12 @@ textarea.vs-input{padding:14px 16px;min-height:96px;resize:vertical}
 .vs-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
 .vs-chip-on{background:#DDF3E4;color:#156A33}
 .vs-chip-off{background:#E7E6E1;color:#6B6A66}
+/* Logo vịt ở màn mở đầu: nhỏ hơn trên điện thoại để không đè lên chữ và icon */
+.vs-intro-logo{width:min(78vw,52svh,520px)}
+@media (max-width:559px){.vs-intro-logo{width:min(58vw,38svh,520px)}}
+/* Thẻ sản phẩm: tên đổi màu, nút giỏ đổi nền cam khi rê chuột để biết đang trỏ vào liên kết */
+.vs-pcard .vs-pname{transition:color .15s}
+.vs-pcard .vs-pname:hover,.vs-pcard .vs-pname:focus-visible{color:#F2421B;text-decoration:underline;text-underline-offset:3px}
+.vs-pcard .vs-padd{transition:background-color .15s,transform .15s}
+.vs-pcard .vs-padd:hover,.vs-pcard .vs-padd:focus-visible{background:#F2421B!important;transform:scale(1.08)}
+.vs-pcard .vs-padd:active{transform:scale(.94)}

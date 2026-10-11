@@ -38,34 +38,37 @@ export function ProductCard({ product }: { product: Product }) {
       >
         <TeeArt product={product} />
       </ZoomFrame>
-      <div className="vs-pinfo" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, padding: "4px 8px" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 4, minWidth: 0, flex: 1 }}>
+      <div className="vs-pinfo" style={{ display: "flex", flexDirection: "column", gap: 4, padding: "4px 8px 2px" }}>
+        <Link
+          href={`/products/${product.slug}`}
+          title={product.name}
+          className="vs-pname"
+          style={{ display: "block", fontSize: 16, fontWeight: 700, letterSpacing: "-0.01em", textDecoration: "none", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}
+        >
+          {product.name}
+        </Link>
+        <span style={{ fontSize: 13, color: "var(--muted)" }}>{sub}</span>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, marginTop: 6 }}>
+          <span style={{ fontSize: 16, fontWeight: 800, whiteSpace: "nowrap" }}>{formatVND(product.price)}</span>
+          {/* Sản phẩm cần chọn size nên "thêm vào giỏ" đi qua trang sản phẩm. */}
           <Link
             href={`/products/${product.slug}`}
-            title={product.name}
-            style={{ display: "block", fontSize: 16, fontWeight: 700, letterSpacing: "-0.01em", textDecoration: "none", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}
+            aria-label={`Thêm ${product.name} vào giỏ hàng`}
+            title="Thêm vào giỏ"
+            className="vs-padd"
+            style={{
+              width: 44, height: 44, flex: "none", borderRadius: 999, background: "var(--btn)", color: "var(--on-btn)",
+              display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none",
+            }}
           >
-            {product.name}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ stroke: "var(--on-btn)" }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M2.5 3.5h2.6l2.1 10.2a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.55-1.2L20 7.5H6" />
+              <circle cx="9.5" cy="19.5" r="1.3" />
+              <circle cx="17" cy="19.5" r="1.3" />
+            </svg>
           </Link>
-          <span style={{ fontSize: 13, color: "var(--muted)" }}>{sub}</span>
         </div>
-        <span style={{ fontSize: 16, fontWeight: 800, whiteSpace: "nowrap", flex: "none" }}>{formatVND(product.price)}</span>
       </div>
-      {/* Sản phẩm cần chọn size nên "thêm vào giỏ" đi qua trang sản phẩm. */}
-      <Link
-        href={`/products/${product.slug}`}
-        aria-label={`Thêm ${product.name} vào giỏ hàng`}
-        className="vs-padd"
-        style={{
-          minHeight: 44, borderRadius: 999, background: "var(--btn)", color: "var(--on-btn)", fontSize: 14,
-          fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", gap: 10, textDecoration: "none",
-        }}
-      >
-        Thêm vào giỏ
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ stroke: "var(--on-btn)" }} strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
-          <path d="M12 5v14M5 12h14" />
-        </svg>
-      </Link>
     </article>
   );
 }

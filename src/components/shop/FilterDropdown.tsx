@@ -5,7 +5,9 @@ import { useEffect, useId, useRef, useState } from "react";
 
 export interface FilterItem {
   name: string;
-  href: string;
+  /** Có href thì mục là liên kết; không thì gọi onSelect (lọc ngay trên trang). */
+  href?: string;
+  onSelect?: () => void;
   active: boolean;
 }
 
@@ -66,19 +68,24 @@ export function FilterDropdown({ label, items }: { label: string; items: FilterI
         >
           {items.map((i) => (
             <li key={i.name} role="option" aria-selected={i.active}>
-              <Link
-                href={i.href}
-                onClick={() => setOpen(false)}
-                className="vs-menu-item"
-                aria-current={i.active ? "true" : undefined}
-              >
-                {i.name}
-                {i.active && (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ stroke: "currentColor" }} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12l5 5 9-10" />
-                  </svg>
-                )}
-              </Link>
+              {(() => {
+                const content = (
+                  <>
+                    {i.name}
+                    {i.active && (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ stroke: "currentColor" }} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12l5 5 9-10" />
+                      </svg>
+                    )}
+                  </>
+                );
+                const aria = i.active ? "true" : undefined;
+                return i.href ? (
+                  <Link href={i.href} onClick={() => setOpen(false)} className="vs-menu-item" aria-current={aria}>{content}</Link>
+                ) : (
+                  <button type="button" onClick={() => { i.onSelect?.(); setOpen(false); }} className="vs-menu-item" aria-current={aria} style={{ width: "100%", border: 0, background: "transparent", font: "inherit", fontSize: 15, fontWeight: 500, cursor: "pointer", textAlign: "left" }}>{content}</button>
+                );
+              })()}
             </li>
           ))}
         </ul>
