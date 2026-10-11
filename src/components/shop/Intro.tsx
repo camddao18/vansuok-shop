@@ -19,7 +19,7 @@ const iconSrc = (name: string) => (["ao-thun", "trading", "navy"].includes(name)
 /** Quack sounds in public/sounds/. One is picked at random per click; add more files here. */
 const QUACKS = ["/sounds/quack.mp3"];
 
-const WORDS = ["QUẠC!", "QUẠC QUẠC!", "FREESHIP?", "CỰC CHẤT", "VANSUOK STUDIO", "GÌ CŨNG CÓ", "HÚ DỊ"];
+const WORDS = ["QUẠC!", "QUẠC QUẠC!", "FREESHIP", "CỰC CHẤT", "VANSUOK", "GÌ CŨNG CÓ", "HÚ DỊ", "CARD CARD", "CARD"];
 
 /**
  * Full-screen interactive opener laid over the home page (only on "/", once per page load).
